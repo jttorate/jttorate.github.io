@@ -505,6 +505,9 @@ h1, h2, h3, h4, h5, h6 {
     #fh5co-intro {
         padding-bottom: 3em;
     }
+    #fh5co-home .bio-photo {
+        margin-left: -70px;
+    }
 }
 #fh5co-intro > div {
     display: -webkit-box;
