@@ -423,7 +423,8 @@ h1, h2, h3, h4, h5, h6 {
     /*margin-bottom: -92px;*/
     margin-bottom: -88px; /* JTT */
     left: 50%;
-    margin-left: -92px;
+    /*margin-left: -92px;*/
+    margin-left: -88px;
 }
 #fh5co-home .bio-photo img {
     -webkit-border-radius: 50%;
