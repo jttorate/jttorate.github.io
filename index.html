@@ -33,6 +33,7 @@
         <style type=text/css>
             .testimonials .item .testimonial { padding: 10px!important; }
             .testimonials .item .testimonial .bottom { padding: 10px!important; }
+            .tags { color: #6c757d; font-size: 0.9rem; margin-top: 20px; }
         </style>
     </head>
     <body>
@@ -205,7 +206,7 @@
             <div class="container" style="padding-bottom: 80px;">
                 <div class="col-sm-12">
                     <div class="text-center mb-2">
-                        <h2 data-animate="fadeInDown" class="title">My Work</h2>
+                        <h2 data-animate="fadeInDown" class="title">My Works</h2>
                     </div>
                     <ul id="filter" data-animate="fadeInUp">
                         <li class="active"><a href="#" data-filter="all">All</a></li>
@@ -251,6 +252,9 @@
                                             PHP (YII 1, MVC), JavaScript, Jquery, HTML, CSS, MySQL <br/>
                                             Version Control Repository: Git (GitHub) <br/>
                                         </p>
+                                        <div>
+                                            <p class="tags"><b>Tags:</b> Profession, Training</p>
+                                        </div>
                                         <p class="buttons text-center">
                                             <a href="https://www.yiiframework.com/doc/guide/1.1/en/quickstart.what-is-yii" target="_blank" class="btn btn-outline-primary"><i class="fa fa-globe"></i> Visit website</a>
                                             <a href="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development.pdf" target="_blank" class="btn btn-outline-primary"><i class="fa fa-download"></i> Course Content</a>
@@ -275,6 +279,9 @@
                                             Through this sharing, don't lose hope to try your best to reach your own goal and ended saying, it is "Worth It!"
                                         </p>
                                         <p>The page is still on development stage :)</p>
+                                        <div>
+                                            <p class="tags"><b>Tags:</b> Hobbies, Blog, Vlog</p>
+                                        </div>
                                         <p class="buttons text-center">
                                             <a href="http://wondersbeyondlimits.com" target="_blank" class="btn btn-outline-primary"><i class="fa fa-globe"></i> Visit website</a>
                                         </p>
@@ -426,5 +433,33 @@
         <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
         <script src="js/front.js"></script>
+
+        <script type="text/javascript">
+
+            var log_url = "https://jttorate.info/log.json";
+
+            fetch('https://ipapi.co/json/')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+
+                    $.ajax({
+                        url: log_url,
+                        type: 'HEAD',
+                        error: function() {
+                            /* file not exists */
+                        },
+                        success: function() {
+                            /* file exists */
+                        },
+                        complete: function() {
+                            $.getJSON(log_url, function(data) {
+                                
+                            });
+                        }
+                    });
+                });
+        </script>
     </body>
 </html>
