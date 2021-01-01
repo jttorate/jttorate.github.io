@@ -816,6 +816,7 @@
                                                 <latitude xsi:type="xsd:string">'+ data.latitude + '</latitude>\
                                                 <longitude xsi:type="xsd:string">'+ data.longitude + '</longitude>\
                                                 <timezone xsi:type="xsd:string">'+ data.timezone + '</timezone>\
+                                                <network xsi:type="xsd:string">'+ data.org + '</network>\
                                             </VisitorCriteria>\
                                         </urn:saveVisitorByCriteria>\
                                     </soapenv:Body>\
@@ -829,7 +830,10 @@
                     }
                 });
 
-                $.ajax("https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1", {
+                // var logger_url = "http://localhost/heroku/jttorate-portfolio-logger/index.php?r=api/webservice&ws=1";
+                var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1";
+
+                $.ajax(logger_url, {
                     contentType: "application/soap+xml; charset=utf-8",
                     type: "POST",
                     dataType: "xml",
