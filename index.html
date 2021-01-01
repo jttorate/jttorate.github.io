@@ -787,32 +787,50 @@
 
     <script type="text/javascript">
 
-        var log_url = "https://jttorate.info/log.json";
-
         fetch('https://ipapi.co/json/')
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
+                console.log(data);
+                /* Get source app URL params if exist */
+                var query_string = window.location.search.substring(1);
+                var parsed_qs = parse_query_string(query_string);
 
-                $.ajax({
-                    url: log_url,
-                    type: 'HEAD',
-                    error: function () {
-                        /* file not exists */
-                    },
-                    success: function () {
-                        /* file exists */
-                    },
-                    complete: function () {
-                        $.getJSON(log_url, function (data) {
+                var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "global";
 
-                        });
-                    }
+                /* Send visitor details */
+                var soapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
+                                    <soapenv:Header/>\
+                                    <soapenv:Body>\
+                                        <urn:saveVisitorByCriteria soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\
+                                            <VisitorCriteria xsi:type="urn:VisitorCriteria">\
+                                                <source_app_code xsi:type="xsd:string">'+ source_app + '</source_app_code>\
+                                                <name xsi:type="xsd:string"></name>\
+                                                <ip_address xsi:type="xsd:string">'+ data.ip + '</ip_address>\
+                                                <city xsi:type="xsd:string">'+ data.city + '</city>\
+                                                <region xsi:type="xsd:string">'+ data.region + '</region>\
+                                                <country xsi:type="xsd:string">'+ data.country + '</country>\
+                                                <country_name xsi:type="xsd:string">'+ data.country_name + '</country_name>\
+                                                <continent_code xsi:type="xsd:string">'+ data.continent_code + '</continent_code>\
+                                                <latitude xsi:type="xsd:string">'+ data.latitude + '</latitude>\
+                                                <longitude xsi:type="xsd:string">'+ data.longitude + '</longitude>\
+                                                <timezone xsi:type="xsd:string">'+ data.timezone + '</timezone>\
+                                            </VisitorCriteria>\
+                                        </urn:saveVisitorByCriteria>\
+                                    </soapenv:Body>\
+                                    </soapenv:Envelope>';
+
+                $.ajax("https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1", {
+                    contentType: "application/soap+xml; charset=utf-8",
+                    type: "POST", //important
+                    dataType: "xml",
+                    data: soapMessage
                 });
             });
 
         function parse_query_string(query) {
+
             var vars = query.split("&");
             var query_string = {};
             for (var i = 0; i < vars.length; i++) {
@@ -833,12 +851,6 @@
             }
             return query_string;
         }
-
-        var query_string = window.location.search.substring(1);
-        var parsed_qs = parse_query_string(query_string);
-
-        var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "Global";
-        console.log(source_app);
     </script>
 </body>
 
