@@ -792,7 +792,7 @@
                 return response.json();
             })
             .then(function (data) {
-                console.log(data);
+
                 /* Get source app URL params if exist */
                 var query_string = window.location.search.substring(1);
                 var parsed_qs = parse_query_string(query_string);
@@ -821,9 +821,17 @@
                                     </soapenv:Body>\
                                     </soapenv:Envelope>';
 
+                /* CORS Anywhere */
+                $.ajaxPrefilter(function (options) {
+                    if (options.crossDomain && jQuery.support.cors) {
+                        var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+                        options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+                    }
+                });
+
                 $.ajax("https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1", {
                     contentType: "application/soap+xml; charset=utf-8",
-                    type: "POST", //important
+                    type: "POST",
                     dataType: "xml",
                     data: soapMessage
                 });
