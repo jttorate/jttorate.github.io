@@ -293,7 +293,7 @@
                     </div>
                 </div>
                 <ul id="filter" data-animate="fadeInUp">
-                    <li class="active"><a href="#" data-filter="all">All</a></li>
+                    <li class="all active"><a href="#" data-filter="all">All</a></li>
                     <li><a href="#" data-filter="web-app" class="">Web App</a></li>
                     <li><a href="#" data-filter="integration" class="references-professional">Integration</a></li>
                     <li class="no-margin"><a href="#" data-filter="training-module" class="references-personal hide">Training Module</a></li>
@@ -851,6 +851,10 @@
             $("#references-personal").removeClass("active");
             $("#references-professional").addClass("active");
 
+            $("#filter .active").removeClass("active"); /* Remove class active to an any filter */
+            $("#filter .all").addClass("active"); /* Add class active to All filter */
+            $("#filter .all a").trigger("click"); /* Trigger click in All filter */
+
             /* Show Filters */
             $("#filter .references-professional").each(function(i, obj) {
                 $(obj).removeClass("hide");
@@ -885,7 +889,11 @@
             
             $("#references-professional").removeClass("active");
             $("#references-personal").addClass("active");
-
+            
+            $("#filter .active").removeClass("active"); /* Remove class active to an any filter */
+            $("#filter .all").addClass("active"); /* Add class active to All filter */
+            $("#filter .all a").trigger("click"); /* Trigger click in All filter */
+            
             /* Show Filters */
             $("#filter .references-personal").each(function(i, obj) {
                 $(obj).removeClass("hide");
