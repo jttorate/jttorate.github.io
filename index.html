@@ -736,20 +736,45 @@
                 <header class="text-center">
                     <h2 class="title">Contact Me</h2>
                 </header>
-                <div class="row services text-center">
-                    <div class="col-lg-12 text-center">
-                        <div class="icon">
-                            <a href="mailto:jttorate@gmail.com" title="jttorate@gmail.com"><i class="fa fa-envelope-square"></i></a>
-                            <a href="https://www.linkedin.com/in/jttorate" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                            <a href="https://www.facebook.com/jttorateiii" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                            <a href="https://www.instagram.com/hypenelo" target="_blank" title="@hypenelo"><i class="fa fa-instagram"></i></a>
-                            <!-- <a href="https://www.youtube.com/channel/UC79WboS3-RSE7choXhfjvGw" target="_blank"><i class="fa fa-youtube-square"></i></a> -->
-                            <a href="https://github.com/jttorate" target="_blank"><i class="fa fa-github-square"></i></a>
-                        </div>
-                        <!--<div class="icon">-->
-                            <!--<a href="https://gitlab.com/jttorate" target="_blank"><i class="fa fa-gitlab"></i></a>-->
-                            <!--<a href="https://bitbucket.org/jttorate" target="_blank"><i class="fa fa-bitbucket-square"></i></a>-->
-                        <!--</div>-->
+                <div class="row mb-4">
+                    <div class="col-lg-8 mx-auto">
+                        <form id="contact-me-form" method="post" action="">
+                            <div class="messages"></div>
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" name="first_name" placeholder="Your first name *" required="required" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="last_name" placeholder="Your last name *" required="required" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="email" placeholder="Your email *" required="required" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="contact_no" placeholder="Your contact number" class="form-control">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <textarea name="message" placeholder="Message for me *" rows="4" required="required" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <button id="contact-me-btn" class="btn btn-outline-light">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="col-lg-12 text-center">
+                    <div class="icon">
+                        <a href="mailto:jttorate@gmail.com" title="jttorate@gmail.com"><i class="fa fa-envelope-square"></i></a>
+                        <a href="https://www.linkedin.com/in/jttorate" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                        <a href="https://www.facebook.com/jttorateiii" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                        <a href="https://www.instagram.com/hypenelo" target="_blank" title="@hypenelo"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/jttorate" target="_blank"><i class="fa fa-github-square"></i></a>
                     </div>
                 </div>
             </div>
@@ -760,7 +785,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p>
-                            © 2020 Junnel T Torate Portfolio <br />
+                            © 2020 Junnel T Torate Portfolio &bull; All Rights Reserved<br />
                             <a href="https://jttorate.info">WWW.JTTORATE.INFO</a>
                         </p>
                         <p class="template-bootstrapious">
@@ -783,8 +808,14 @@
         <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
         <script src="js/front.js"></script>
+        <script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
 
         <script type="text/javascript">
+
+//            var logger_url = "http://localhost/heroku/jttorate-portfolio-logger/index.php?r=api/webservice&ws=1";
+            var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1";
+
+            var visitor_id;
 
             fetch('https://ipapi.co/json/')
                     .then(function(response) {
@@ -799,7 +830,7 @@
                         var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "global";
 
                         /* Send visitor details */
-                        var soapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
+                        var visitorSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
                                         <soapenv:Header/>\
                                         <soapenv:Body>\
                                             <urn:saveVisitorByCriteria soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\
@@ -829,14 +860,17 @@
                             }
                         });
 
-//                        var logger_url = "http://localhost/heroku/jttorate-portfolio-logger/index.php?r=api/webservice&ws=1";
-                        var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1";
-
                         $.ajax(logger_url, {
                             contentType: "application/soap+xml; charset=utf-8",
                             type: "POST",
                             dataType: "xml",
-                            data: soapMessage
+                            data: visitorSoapMessage,
+                            success: function(data) {
+
+                                visitor_id = JSON.parse($(data).children().find('id').text());
+
+                                console.log(visitor_id);
+                            }
                         });
                     });
 
@@ -861,6 +895,44 @@
                     }
                 }
                 return query_string;
+            }
+
+            function xmlToJson(xml) {
+
+                // Create the return object
+                var obj = {};
+
+                if (xml.nodeType == 1) { // element
+                    // do attributes
+                    if (xml.attributes.length > 0) {
+                        obj["@attributes"] = {};
+                        for (var j = 0; j < xml.attributes.length; j++) {
+                            var attribute = xml.attributes.item(j);
+                            obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+                        }
+                    }
+                } else if (xml.nodeType == 3) { // text
+                    obj = xml.nodeValue;
+                }
+
+                // do children
+                if (xml.hasChildNodes()) {
+                    for (var i = 0; i < xml.childNodes.length; i++) {
+                        var item = xml.childNodes.item(i);
+                        var nodeName = item.nodeName;
+                        if (typeof (obj[nodeName]) == "undefined") {
+                            obj[nodeName] = xmlToJson(item);
+                        } else {
+                            if (typeof (obj[nodeName].push) == "undefined") {
+                                var old = obj[nodeName];
+                                obj[nodeName] = [];
+                                obj[nodeName].push(old);
+                            }
+                            obj[nodeName].push(xmlToJson(item));
+                        }
+                    }
+                }
+                return obj;
             }
 
             $("#references-professional").click(function() {
@@ -940,6 +1012,55 @@
                         $(obj).addClass("hide");
                     }
                 });
+            });
+
+            $("#contact-me-btn").click(function(e) {
+
+                var validated = true;
+
+                $("#contact-me-form [required=required]").each(function() {
+                    if ($(this).val() === "") {
+                        validated = false;
+                    }
+                });
+
+                if (validated) {
+
+                    e.preventDefault();
+
+                    /* Send contact_us details */
+                    var contactUsSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
+                                    <soapenv:Header/>\
+                                    <soapenv:Body>\
+                                        <urn:saveContactUsByCriteria soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\
+                                            <ContactUsCriteria xsi:type="urn:ContactUsCriteria">\
+                                               <visitor_id xsi:type="xsd:integer">' + visitor_id + '</visitor_id>\
+                                               <first_name xsi:type="xsd:string">' + $("#contact-me-form [name=first_name]").val() + '</first_name>\
+                                               <last_name xsi:type="xsd:string">' + $("#contact-me-form [name=last_name]").val() + '</last_name>\
+                                               <email xsi:type="xsd:string">' + $("#contact-me-form [name=email]").val() + '</email>\
+                                               <contact_no xsi:type="xsd:string">' + $("#contact-me-form [name=contact_no]").val() + '</contact_no>\
+                                               <message xsi:type="xsd:string">' + $("#contact-me-form [name=message]").val() + '</message>\
+                                            </ContactUsCriteria>\
+                                         </urn:saveContactUsByCriteria>\
+                                    </soapenv:Body>\
+                                    </soapenv:Envelope>';
+
+                    $.ajax(logger_url, {
+                        contentType: "application/soap+xml; charset=utf-8",
+                        type: "POST",
+                        dataType: "xml",
+                        data: contactUsSoapMessage,
+                        beforeSend: function() {
+                            $("#contact-me-form :input").prop("disabled", true);
+                        },
+                        success: function(data) {
+                            $("#contact-me-form")[0].reset();
+                        },
+                        complete: function() {
+                            $("#contact-me-form :input").prop("disabled", false);
+                        }
+                    });
+                }
             });
         </script>
     </body>
