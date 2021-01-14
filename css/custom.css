@@ -1,1 +1,54 @@
 /* your styles go here */
+
+.testimonials .item .testimonial { padding: 10px !important; }
+.testimonials .item .testimonial .bottom { padding: 10px !important;}
+.testimonials .item { padding-bottom: 40px!important; }
+.testimonials .item .testimonial .name-picture h5 { font-size: 15px!important; }
+.equalize-height .owl-stage .owl-item .item { height: auto !important; }
+.tags { margin-top: 20px; }
+.hide { display: none!important; }
+.no-margin { margin: 0px!important; }
+#detail .close { cursor: pointer; }
+#detail a.disclaimer:hover, #detail a.disclaimer:focus { text-decoration: none; }
+
+#nav-references > .nav.nav-tabs {
+    border-bottom: none;
+}
+#nav-references > div a.nav-item.nav-link {
+    background: #f5f5f5;
+    border: solid 1px #ccc;
+    color: #495057;
+    text-align: center;
+    width: 40%;
+    border-radius: 10px;
+    height: 40px;
+    margin: 3px;
+}
+#nav-references > div a.nav-item.nav-link.active {
+    color: #fff;
+    background: #2b90d9;
+    border-bottom-color: #2b90d9;
+}
+#nav-references > div a.nav-item.nav-link.active p {
+    color: #fff;
+}
+#nav-references > div a.nav-item.nav-link.active:after {
+    content: "";
+    position: relative;
+    bottom: -3px;
+    border: 15px solid transparent;
+    border-top-color: #2b90d9;
+}
+#nav-tab-content {
+    padding-top: 10px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    background: #4b89b5;
+    color: #fff;
+    transition: all 0.3s;
+}
