@@ -52,3 +52,7 @@
     color: #fff;
     transition: all 0.3s;
 }
+
+.developer-img {
+  border-radius: 3% !important;
+}
