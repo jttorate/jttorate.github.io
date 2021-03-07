@@ -1,7 +1,7 @@
 /* your script go here */
 
-$(document).ready(function() {
-    $(window).scroll(function() {
+$(document).ready(function () {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
             $('#back-to-top').fadeIn();
         } else {
@@ -9,7 +9,7 @@ $(document).ready(function() {
         }
     });
     /* Scroll body to 0px on click */
-    $('#back-to-top').click(function() {
+    $('#back-to-top').click(function () {
         $('body,html').animate({
             scrollTop: 0
         }, 400);
@@ -23,19 +23,19 @@ var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webserv
 var visitor_id;
 
 fetch('https://ipapi.co/json/')
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
 
-            /* Get source app URL params if exist */
-            var query_string = window.location.search.substring(1);
-            var parsed_qs = parse_query_string(query_string);
+        /* Get source app URL params if exist */
+        var query_string = window.location.search.substring(1);
+        var parsed_qs = parse_query_string(query_string);
 
-            var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "global";
+        var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "global";
 
-            /* Send visitor details */
-            var visitorSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
+        /* Send visitor details */
+        var visitorSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
                                         <soapenv:Header/>\
                                         <soapenv:Body>\
                                             <urn:saveVisitorByCriteria soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\
@@ -57,27 +57,27 @@ fetch('https://ipapi.co/json/')
                                         </soapenv:Body>\
                                         </soapenv:Envelope>';
 
-            /* CORS Anywhere */
-            $.ajaxPrefilter(function(options) {
-                if (options.crossDomain && jQuery.support.cors) {
-                    var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-                    options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
-                }
-            });
-
-            $.ajax(logger_url, {
-                contentType: "application/soap+xml; charset=utf-8",
-                type: "POST",
-                dataType: "xml",
-                data: visitorSoapMessage,
-                success: function(data) {
-
-                    visitor_id = JSON.parse($(data).children().find('id').text());
-
-                    console.log(visitor_id);
-                }
-            });
+        /* CORS Anywhere */
+        $.ajaxPrefilter(function (options) {
+            if (options.crossDomain && jQuery.support.cors) {
+                var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+                options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+            }
         });
+
+        $.ajax(logger_url, {
+            contentType: "application/soap+xml; charset=utf-8",
+            type: "POST",
+            dataType: "xml",
+            data: visitorSoapMessage,
+            success: function (data) {
+
+                visitor_id = JSON.parse($(data).children().find('id').text());
+
+                console.log(visitor_id);
+            }
+        });
+    });
 
 function parse_query_string(query) {
 
@@ -140,7 +140,7 @@ function xmlToJson(xml) {
     return obj;
 }
 
-$("#references-professional").click(function() {
+$("#references-professional").click(function () {
 
     $("#references-personal").removeClass("active");
     $("#references-professional").addClass("active");
@@ -150,13 +150,13 @@ $("#references-professional").click(function() {
     $("#filter .all a").trigger("click"); /* Trigger click in All filter */
 
     /* Show Filters */
-    $("#filter .references-professional").each(function(i, obj) {
+    $("#filter .references-professional").each(function (i, obj) {
         $(obj).removeClass("hide");
         $(obj).closest("li").removeClass("no-margin");
     });
 
     /* Hide Filters */
-    $("#filter .references-personal").each(function(i, obj) {
+    $("#filter .references-personal").each(function (i, obj) {
         if (!$(obj).hasClass("hide")) {
             $(obj).addClass("hide");
         }
@@ -167,19 +167,19 @@ $("#references-professional").click(function() {
     });
 
     /* Hide Thumbnails */
-    $("#references-masonry .references-personal").each(function(i, obj) {
+    $("#references-masonry .references-personal").each(function (i, obj) {
         if (!$(obj).hasClass("hide")) {
             $(obj).addClass("hide");
         }
     });
 
     /* Show Thumbnails */
-    $("#references-masonry .references-professional").each(function(i, obj) {
+    $("#references-masonry .references-professional").each(function (i, obj) {
         $(obj).removeClass("hide");
     });
 });
 
-$("#references-personal").click(function() {
+$("#references-personal").click(function () {
 
     $("#references-professional").removeClass("active");
     $("#references-personal").addClass("active");
@@ -189,13 +189,13 @@ $("#references-personal").click(function() {
     $("#filter .all a").trigger("click"); /* Trigger click in All filter */
 
     /* Show Filters */
-    $("#filter .references-personal").each(function(i, obj) {
+    $("#filter .references-personal").each(function (i, obj) {
         $(obj).removeClass("hide");
         $(obj).closest("li").removeClass("no-margin");
     });
 
     /* Hide Filters */
-    $("#filter .references-professional").each(function(i, obj) {
+    $("#filter .references-professional").each(function (i, obj) {
         if (!$(obj).hasClass("hide")) {
             $(obj).addClass("hide");
         }
@@ -206,24 +206,24 @@ $("#references-personal").click(function() {
     });
 
     /* Show Thumbnails */
-    $("#references-masonry .references-personal").each(function(i, obj) {
+    $("#references-masonry .references-personal").each(function (i, obj) {
         $(obj).removeClass("hide");
         $(obj).closest("li").removeClass("no-margin");
     });
 
     /* Hide Thumbnails */
-    $("#references-masonry .references-professional").each(function(i, obj) {
+    $("#references-masonry .references-professional").each(function (i, obj) {
         if (!$(obj).hasClass("hide")) {
             $(obj).addClass("hide");
         }
     });
 });
 
-$("#contact-me-btn").click(function(e) {
+$("#contact-me-btn").click(function (e) {
 
     var validated = true;
 
-    $("#contact-me-form [required=required]").each(function() {
+    $("#contact-me-form [required=required]").each(function () {
         if ($(this).val() === "") {
             validated = false;
         }
@@ -255,19 +255,19 @@ $("#contact-me-btn").click(function(e) {
             type: "POST",
             dataType: "xml",
             data: contactUsSoapMessage,
-            beforeSend: function() {
+            beforeSend: function () {
                 $("#contact-me-form :input").prop("disabled", true);
             },
-            success: function(data) {
+            success: function (data) {
                 $("#contact-me-form")[0].reset();
             },
-            complete: function() {
+            complete: function () {
                 $("#contact-me-form :input").prop("disabled", false);
             }
         });
     }
 });
 
-window.addEventListener("load", function() {
-    window.wpcc.init({"border": "thin", "colors": {"popup": {"background": "#f6f6f6", "text": "#000000", "border": "#555555"}, "button": {"background": "#555555", "text": "#ffffff"}}, "padding": "small", "margin": "small", "transparency": "5", "fontsize": "tiny", "content": {"href": "https://jttorate.info/cookie-policy"}, "position": "bottom-right", "corners": "normal"})
+window.addEventListener("load", function () {
+    window.wpcc.init({ "border": "thin", "colors": { "popup": { "background": "#f6f6f6", "text": "#000000", "border": "#555555" }, "button": { "background": "#555555", "text": "#ffffff" } }, "padding": "small", "margin": "small", "transparency": "5", "fontsize": "tiny", "content": { "href": "https://jttorate.info/cookie-policy" }, "position": "bottom-right", "corners": "normal" })
 });
