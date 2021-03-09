@@ -1,5 +1,6 @@
 /* your script go here */
 
+/* Back To Top */
 $(document).ready(function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 50) {
@@ -17,6 +18,7 @@ $(document).ready(function () {
     });
 });
 
+/* Portfolio Logger */
 //var logger_url = "http://localhost/heroku/jttorate-portfolio-logger/index.php?r=api/webservice&ws=1";
 var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1";
 
@@ -219,6 +221,7 @@ $("#references-personal").click(function () {
     });
 });
 
+/* Contact Form */
 $("#contact-me-btn").click(function (e) {
 
     var validated = true;
@@ -268,6 +271,7 @@ $("#contact-me-btn").click(function (e) {
     }
 });
 
+/* Cookie Policy Pop-up */
 window.addEventListener("load", function () {
     window.wpcc.init({
         "border": "thin",
@@ -292,4 +296,11 @@ window.addEventListener("load", function () {
         "position": "bottom-right",
         "corners": "normal"
     })
+});
+
+/* Menu Toggle */
+$("#navbarcollapse ul li .nav-link").click(function () {
+    if ($(window).width() <= 991) {
+        $("#navbar-toggler").click();
+    }
 });
