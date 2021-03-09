@@ -63,7 +63,7 @@ fetch('https://ipapi.co/json/')
         $.ajaxPrefilter(function (options) {
             if (options.crossDomain && jQuery.support.cors) {
                 var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-                options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+                options.url = http + '//jt-cors-anywhere.herokuapp.com/' + options.url;
             }
         });
 
