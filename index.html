@@ -1,367 +1,826 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>JUNNEL T TORATE</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="all,follow">
-        <!-- Bootstrap CSS-->
-        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-        <!-- Font Awesome CSS-->
-        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-        <!-- Google fonts - Roboto + Roboto Slab-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
-        <!-- owl carousel-->
-        <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-        <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
-        <!-- animate.css-->
-        <link rel="stylesheet" href="vendor/animate.css/animate.css">
-        <!-- theme stylesheet-->
-        <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
-        <!-- Custom stylesheet - for your changes-->
-        <link rel="stylesheet" href="css/custom.css">
-        <!-- Leaflet CSS - For the map-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-        <!-- Favicon-->
-        <link rel="shortcut icon" href="img/logos/logo.png">
-        <!-- Tweaks for older IEs-->
-        <!--[if lt IE 9]>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JUNNEL T TORATE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Roboto + Roboto Slab-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+    <!-- animate.css-->
+    <link rel="stylesheet" href="vendor/animate.css/animate.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Leaflet CSS - For the map-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/logos/logo.png">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
                     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
                     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <!-- navbar-->
-        <header class="header">
-            <nav class="navbar navbar-expand-lg fixed-top">
-                <div class="container"><a href="/" class="navbar-brand scrollTo">Junnel T Torate</a>
-                    <button id="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
-                    <div id="navbarcollapse" class="collapse navbar-collapse">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item"><a href="#intro" class="nav-link link-scroll">Intro</a></li>
-                            <li class="nav-item"><a href="#about" class="nav-link link-scroll">About</a></li>
-                            <li class="nav-item"><a href="#skills" class="nav-link link-scroll">Skills</a></li>
-                            <li class="nav-item"><a href="#services" class="nav-link link-scroll">Services</a></li>
-                            <li class="nav-item"><a href="#experience" class="nav-link link-scroll">Experience</a></li>
-                            <li class="nav-item"><a href="#references" class="nav-link link-scroll">My Work</a></li>
-                            <li class="nav-item"><a href="#certification" class="nav-link link-scroll">Certification</a></li>
-                            <li class="nav-item"><a href="#contact" class="nav-link link-scroll">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!-- Intro Image-->
-        <section id="intro" style="background: url(img/home.jpg) center center no-repeat; background-size: cover;" class="intro-section pb-2">
-            <div class="container text-center">
-                <div data-animate="fadeInDown" class="logo"><img src="img/developer-avatar.jpg" alt="logo" width="200" class="image rounded-circle"></div>
-                <h1 data-animate="fadeInDown" class="text-shadow mb-5">Hello, I'm Nelo!</h1>
-                <p data-animate="slideInUp" class="h3 text-shadow text-400">
-                    A Full Stack Software Developer aims to fulfill the user's needs by means of software applications and provide positive user experiences.
-                </p>
-            </div>
-        </section>
-
-        <!-- About-->
-        <section id="about" class="about-section" style="padding-bottom: 0px;">
-            <div class="container">
-                <header class="text-center">
-                    <h2 data-animate="fadeInDown" class="title">About Me</h2>
-                </header>
-                <div data-animate="fadeInUp" class="row">
-                    <div class="col-lg-6 text-center">
-                        <img src="img/developer-profile-square.jpg" alt="This is me!" width="410" class="image developer-img img-fluid">
-                    </div>
-                    <div class="col-lg-6 bg-gray pt-3" style="box-shadow: 0px -1px 5px rgb(50 50 50 / 50%);">
-                        <p>I graduated at Aklan State University, Kalibo, Aklan with the degree of Bachelor of Science in Information Technology, Batch 2012.</p>
-                        <p>
-                            &bull; Best in Software Project Development (Thesis) <br/>
-                            &bull; ASU Dean Lister
-                        </p>
-                        <p>
-                            I started my career with passion and commitment to seek knowledge to improve myself in this profession and offer what I can do. Strongly tackle this line of vocation to prove that I'm worthy and fit being a software developer.
-                        </p>
-                        <p>
-                            Being a programmer is inevitable stressful and never-ending series of problem solving that sometimes it's like "being a detective in a crime that unconsciously you are also the murderer". Every challenge I have experienced trying to force me to give up,
-                            nonetheless, the fulfillment from the accomplishment through hard work lift up the feeling that I can do much more out of my best I could possibly do. I always go with the flow of IT Innovations by improving the range of my skill
-                            sets so that I can easily adapt any technologies.
-                        </p>
-                        <p>
-                            On the other hand, watching animé and doing graphic designs are my hobbies.
-                        </p>
-                    </div>
+    <!-- navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container"><a href="/" class="navbar-brand scrollTo">Junnel T Torate</a>
+                <button id="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
+                <div id="navbarcollapse" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="#intro" class="nav-link link-scroll">Intro</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link link-scroll">About</a></li>
+                        <li class="nav-item"><a href="#skills" class="nav-link link-scroll">Skills</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link link-scroll">Services</a></li>
+                        <li class="nav-item"><a href="#experience" class="nav-link link-scroll">Experience</a></li>
+                        <li class="nav-item"><a href="#references" class="nav-link link-scroll">My Work</a></li>
+                        <li class="nav-item"><a href="#certification" class="nav-link link-scroll">Certification</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link link-scroll">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </nav>
+    </header>
 
-        <!-- Skills -->
-        <section id="skills" class="about-section bg-gray">
-            <div class="container">
-                <header data-animate="fadeInDown" class="text-center">
-                    <h2 class="title">Skills</h2>
-                </header>
-                <div data-animate="fadeInUp" class="row" style="padding-bottom: 30px;">
-                    <div class="row col-lg-12">
-                        <div class="col-lg-6">
-                            <div class="skill-item">
-                                <div class="progress-title">PHP</div>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="progress-title">JavaScript</div>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="progress-title">HTML5 / CSS</div>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="skill-item">
-                                <div class="progress-title">MySQL</div>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 90%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>90%</sub></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="progress-title">MSSQL Server</div>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 70%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>70%</sub></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="progress-title">Magic XPI (MSE)</div>
-                                <div class="progress">
-                                    <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row col-lg-12">
-                        <div class="col-lg-6">
-                            <p><b>Web Tools:</b> HTML5, CSS, PHP, YII 1, JavaScript (jQuery), Node.js, Socket.IO</p>
-                            <p><b>Database:</b> MySQL, MS SQL Server, Query Optimization</p>
-                            <p><b>System Integration:</b> Magic XPI (Magic Software Enterprise)</p>
-                            <p><b>Version Control Repository:</b> TortoiseSVN, Git (GitHub, Bitbucket, GitLab)</p>
-                        </div>
-                        <div class="col-lg-6">
-                            <p><b>Project & Issue Tracker:</b> Jira Software</p>
-                            <p><b>Graphic Designs:</b> Photoshop</p>
-                            <p><b>Other Tools:</b> Composer, NPM, IIS, Windows Batch File</p>
-                        </div>
-                    </div>
+    <!-- Intro Image-->
+    <section id="intro" style="background: url(img/home.jpg) center center no-repeat; background-size: cover;" class="intro-section pb-2">
+        <div class="container text-center">
+            <div data-animate="fadeInDown" class="logo"><img src="img/developer-avatar.jpg" alt="logo" width="200" class="image rounded-circle"></div>
+            <h1 data-animate="fadeInDown" class="text-shadow mb-5">Hello, I'm Nelo!</h1>
+            <p data-animate="slideInUp" class="h3 text-shadow text-400">
+                A Full Stack Software Developer aims to fulfill the user's needs by means of software applications and provide positive user experiences.
+            </p>
+        </div>
+    </section>
+
+    <!-- About-->
+    <section id="about" class="about-section" style="padding-bottom: 0px;">
+        <div class="container">
+            <header class="text-center">
+                <h2 data-animate="fadeInDown" class="title">About Me</h2>
+            </header>
+            <div data-animate="fadeInUp" class="row">
+                <div class="col-lg-6 text-center">
+                    <img src="img/developer-avatar.png" alt="This is me!" width="300" class="image developer-img img-fluid mb-3">
+                    <p>I graduated at Aklan State University, Kalibo, Aklan with the degree of Bachelor of Science in Information Technology, Batch 2012.</p>
+                    <p>
+                        Best in Software Project Development (Thesis) <br/> ASU Dean Lister
+                    </p>
                 </div>
-                <div data-animate="fadeInUp" class="col-lg-12 text-center">
-                    <hr>
-                    <p class="lead">Would you like to keep my resumé?</p>
-                    <p><a href="files/junnel-torate-resume.pdf" target="_blank" class="btn btn-outline-primary">Download</a></p>
-                    <!-- <p><a href="#" class="btn btn-outline-primary">Download</a></p> -->
+                <div class="col-lg-6 pt-3">
+                    <p>
+                        I started my career with passion and commitment to seek knowledge to improve myself in this profession and offer what I can do. Strongly tackle this line of vocation to prove that I'm worthy and fit being a software developer.
+                    </p>
+                    <p>
+                        Being a programmer is inevitable stressful and never-ending series of problem solving that sometimes it's like "being a detective in a crime that unconsciously you are also the murderer". Every challenge I have experienced trying to force me to give up,
+                        nonetheless, the fulfillment from the accomplishment through hard work lift up the feeling that I can do much more out of my best I could possibly do. I always go with the flow of IT Innovations by improving the range of my skill
+                        sets so that I can easily adapt any technologies.
+                    </p>
+                    <p>
+                        On the other hand, watching animé and doing graphic designs are my hobbies.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Service-->
-        <section id="services" class="bg-gradient services-section">
-            <div class="container">
-                <header class="text-center">
-                    <h2 data-animate="fadeInDown" class="title">Services</h2>
-                </header>
-                <div data-animate="fadeInUp" class="row text-center">
+    <!-- Skills -->
+    <section id="skills" class="about-section bg-gray">
+        <div class="container">
+            <header data-animate="fadeInDown" class="text-center">
+                <h2 class="title">Skills</h2>
+            </header>
+            <div data-animate="fadeInUp" class="row" style="padding-bottom: 30px;">
+                <div class="row col-lg-12">
                     <div class="col-lg-6">
-                        <div class="icon"><i class="fa fa-server"></i></div>
-                        <h3 class="heading mb-3 text-400">PHP Web Development</h3>
-                        <p class="text-left description">PHP is capable when it comes to a complete system that interacts with the user and stores their input data. Using ready made frameworks like YII, Laravel or using the basic Native PHP. I am here to help you to build your own ideal
-                            web-based application to automate the uneasy task you've always done and also, save your time.</p>
+                        <div class="skill-item">
+                            <div class="progress-title">PHP</div>
+                            <div class="progress">
+                                <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="progress-title">JavaScript</div>
+                            <div class="progress">
+                                <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="progress-title">HTML5 / CSS</div>
+                            <div class="progress">
+                                <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="icon"><i class="fa fa-html5"></i></div>
-                        <h3 class="heading mb-3 text-400">HTML5 Static Pages</h3>
-                        <p class="text-left description">I offer static web page development that is easy to update content. Like in this portfolio that I was developed and deployed using GitHub Pages, I can give you a straightforward static web page to showcase your professional background
-                            and hobbies.</p>
+                        <div class="skill-item">
+                            <div class="progress-title">MySQL</div>
+                            <div class="progress">
+                                <div role="progressbar" style="width: 90%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>90%</sub></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="progress-title">MSSQL Server</div>
+                            <div class="progress">
+                                <div role="progressbar" style="width: 70%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>70%</sub></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="progress-title">Magic XPI (MSE)</div>
+                            <div class="progress">
+                                <div role="progressbar" style="width: 95%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5 skill-progress-bar"><sub>95%</sub></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div data-animate="fadeInUp" class="text-center">
-                    <hr>
-                    <p class="lead">Would you like to know more or just discuss something?</p>
-                    <p><a href="#contact" class="btn btn-outline-light link-scroll">Contact me</a></p>
+                <div class="row col-lg-12">
+                    <div class="col-lg-6">
+                        <p><b>Web Tools:</b> HTML5, CSS, PHP, YII 1, JavaScript, jQuery, Node.js, Socket.IO, React JS, AJAX, JSON</p>
+                        <p><b>Database:</b> MySQL, MS SQL Server, Query Optimization</p>
+                        <p><b>System Integration:</b> Magic XPI (Magic Software Enterprise)</p>
+                        <p><b>Version Control Repository:</b> TortoiseSVN, Git (GitHub, Bitbucket, GitLab)</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p><b>Project & Issue Tracker:</b> Jira Software</p>
+                        <p><b>Graphic Designs:</b> Photoshop</p>
+                        <p><b>Other Tools:</b> Composer, NPM, IIS, Windows Batch File</p>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div data-animate="fadeInUp" class="col-lg-12 text-center">
+                <hr>
+                <p class="lead">Would you like to keep my resumé?</p>
+                <!-- <p><a href="files/junnel-torate-resume.pdf" target="_blank" class="btn btn-outline-primary">Download</a></p> -->
+                <p><a href="#" class="btn btn-outline-primary">Download</a></p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Experience -->
-        <section id="experience" class="testimonials-section bg-gray">
-            <div class="container">
-                <header data-animate="fadeInDown" class="text-center">
-                    <h2 class="title">Experience</h2>
-                </header>
-                <div data-animate="fadeInUp" class="row">
-                    <!--                    <div class="col-lg-2 text-center mb-2">
+    <!-- Service-->
+    <section id="services" class="bg-gradient services-section">
+        <div class="container">
+            <header class="text-center">
+                <h2 data-animate="fadeInDown" class="title">Services</h2>
+            </header>
+            <div data-animate="fadeInUp" class="row text-center">
+                <div class="col-lg-6">
+                    <div class="icon"><i class="fa fa-server"></i></div>
+                    <h3 class="heading mb-3 text-400">PHP Web Development</h3>
+                    <p class="text-left description">PHP is capable when it comes to a complete system that interacts with the user and stores their input data. Using ready made frameworks like YII, Laravel or using the basic Native PHP. I am here to help you to build your own ideal
+                        web-based application to automate the uneasy task you've always done and also, save your time.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="icon"><i class="fa fa-html5"></i></div>
+                    <h3 class="heading mb-3 text-400">HTML5 Static Pages</h3>
+                    <p class="text-left description">I offer static web page development that is easy to update content. Like in this portfolio that I was developed and deployed using GitHub Pages, I can give you a straightforward static web page to showcase your professional background
+                        and hobbies.</p>
+                </div>
+            </div>
+            <div data-animate="fadeInUp" class="text-center">
+                <hr>
+                <p class="lead">Would you like to know more or just discuss something?</p>
+                <p><a href="#contact" class="btn btn-outline-light link-scroll">Contact me</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="testimonials-section bg-gray">
+        <div class="container">
+            <header data-animate="fadeInDown" class="text-center">
+                <h2 class="title">Experience</h2>
+            </header>
+            <div data-animate="fadeInUp" class="row">
+                <!--                    <div class="col-lg-2 text-center mb-2">
                                                 <div class="name-picture"><img alt="" src="img/logos/in1Go.png"></div>
                                             </div>-->
-                    <div class="col-lg-12">
-                        <div class="text">
-                            <h5>In1Go Technologies, Inc.</h5>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p>
-                                        Las Piñas City, Philippines &bull; Full-time <br/>
-                                        May 2013 – February 2021 &bull; 7 yrs 9 mos
-                                        
-                                    </p>
-                                </div>
-                                <div class="col-lg-6">
-                                    <p>
-                                        &bull; 2019 Employee of the Year Awardee <br/>
-                                        &bull; Magic XPI Software Integration Specialist <br/>
-                                        &bull; Experienced with Agile Software Development
-                                    </p>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="timeline">
-                                        <div class="now">START</div>   
+                <div class="col-lg-12">
+                    <div class="text">
+                        <h5>In1Go Technologies, Inc.</h5>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>
+                                    Las Piñas City, Philippines &bull; Full-time <br/> May 2013 – February 2021 &bull; 7 yrs 9 mos
 
-                                        <svg height="5" width="100">
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>
+                                    &bull; 2019 Employee of the Year Awardee <br/> &bull; Magic XPI Software Integration Specialist <br/> &bull; Experienced with Agile Software Development
+                                </p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="timeline">
+                                    <div class="now">START</div>
+
+                                    <svg height="5" width="100">
                                             <line x1="0" y1="0" x2="100" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
                                             Sorry, your browser does not support inline SVG.
                                         </svg>
-                                      
-                                        <div class="event1">                                          
-                                            <div class="event1Bubble">
-                                                <div class="eventTitle">Understudy</div>
-                                                <div class="eventTime">
-                                                    <div class="Day">May 2013 – Sep 2013</div>
-                                                </div>
+
+                                    <div class="event1">
+                                        <div class="event1Bubble">
+                                            <div class="eventTitle">Understudy (Trainee)</div>
+                                            <div class="eventTime">
+                                                <div class="Day">May 2013 – Sep 2013</div>
                                             </div>
-                                            <svg height="20" width="20">
-                                                <circle cx="10" cy="11" r="5" fill="#4b89b5" />
-                                            </svg>                                        
                                         </div>
-                                        
-                                        <svg height="5" width="250">
-                                            <line x1="0" y1="0" x2="250" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
-                                            Sorry, your browser does not support inline SVG.
-                                        </svg>
-                                      
-                                        <div class="event2">                                          
-                                            <div class="event2Bubble">
-                                                <div class="eventTitle">Jr. Software Developer</div>
-                                                <div class="eventTime">
-                                                    <div class="Day">Oct 2013 – Sep 2014</div>
-                                                </div>
-                                            </div>
-                                            <svg height="20" width="20">
+                                        <svg height="20" width="20">
                                                 <circle cx="10" cy="11" r="5" fill="#4b89b5" />
                                             </svg>
-                                        </div>
-                                        
-                                        <svg height="5" width="250">
+                                    </div>
+
+                                    <svg height="5" width="250">
                                             <line x1="0" y1="0" x2="250" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
                                             Sorry, your browser does not support inline SVG.
                                         </svg>
-                                      
-                                        <div class="event3">                                          
-                                            <div class="event3Bubble">
-                                                <div class="eventTitle">Sr. Software Developer</div>
-                                                <div class="eventTime">
-                                                    <div class="Day">Oct 2014 – Sep 2015</div>
-                                                </div>
+
+                                    <div class="event2">
+                                        <div class="event2Bubble">
+                                            <div class="eventTitle">Jr. Software Developer</div>
+                                            <div class="eventTime">
+                                                <div class="Day">Oct 2013 – Sep 2014</div>
                                             </div>
-                                            <svg height="20" width="20">
-                                                <circle cx="10" cy="11" r="5" fill="#4b89b5" />
-                                            </svg>                                        
                                         </div>
-                                        
-                                        <svg height="5" width="250">
-                                            <line x1="0" y1="0" x2="250" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
-                                            Sorry, your browser does not support inline SVG.
-                                        </svg>
-                                      
-                                        <div class="event4">                                          
-                                            <div class="event4Bubble">
-                                                <div class="eventTitle">IT Team Lead</div>
-                                                <div class="eventTime">
-                                                    <div class="Day">Oct 2015 – Feb 2021</div>
-                                                </div>
-                                            </div>
-                                            <svg height="20" width="20">
+                                        <svg height="20" width="20">
                                                 <circle cx="10" cy="11" r="5" fill="#4b89b5" />
                                             </svg>
+                                    </div>
+
+                                    <svg height="5" width="250">
+                                            <line x1="0" y1="0" x2="250" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
+                                            Sorry, your browser does not support inline SVG.
+                                        </svg>
+
+                                    <div class="event3">
+                                        <div class="event3Bubble">
+                                            <div class="eventTitle">Sr. Software Developer</div>
+                                            <div class="eventTime">
+                                                <div class="Day">Oct 2014 – Sep 2015</div>
+                                            </div>
                                         </div>
-                                        
-                                        <svg height="5" width="100">
+                                        <svg height="20" width="20">
+                                                <circle cx="10" cy="11" r="5" fill="#4b89b5" />
+                                            </svg>
+                                    </div>
+
+                                    <svg height="5" width="250">
+                                            <line x1="0" y1="0" x2="250" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
+                                            Sorry, your browser does not support inline SVG.
+                                        </svg>
+
+                                    <div class="event4">
+                                        <div class="event4Bubble">
+                                            <div class="eventTitle">IT Team Lead</div>
+                                            <div class="eventTime">
+                                                <div class="Day">Oct 2015 – Feb 2021</div>
+                                            </div>
+                                        </div>
+                                        <svg height="20" width="20">
+                                                <circle cx="10" cy="11" r="5" fill="#4b89b5" />
+                                            </svg>
+                                    </div>
+
+                                    <svg height="5" width="100">
                                             <line x1="0" y1="0" x2="100" y2="0" style="stroke:#4b89b5;stroke-width:5" />
                                             Sorry, your browser does not support inline SVG.
                                         </svg>
-                                      
-                                        <div class="now">END</div>                                        
-                                    </div>
+
+                                    <div class="now">END</div>
                                 </div>
                             </div>
-                            <p>Develop, maintain and support web application programs for an administrative portal using PHP and related tools. Analyze code for system testing and debugging; create test transactions to find, isolate and rectify issues; and manage
-                                a team. Integrate 3<sup>rd</sup> party applications and client-based systems using Magic XPI under the support of Magic Software Enterprise architects.</p>
-                            <p>
-                                <b>Accomplishments:</b> <br/> &bull; Reconfigured multiple systems to fuel improvements to productivity, efficiency, uptime and accuracy for global business operations. Developed code, system design and test/QA plans for all
-                                solutions and coordinated nationwide rollouts. <br/> &bull; Trained and mentored junior developers in programming methodologies and best practices. <br/> &bull; Served as a core group member in defining and prioritizing technology
-                                investments for ensuring the alignment of process, technology and business objectives. <br/>
-                            </p>
                         </div>
+                        <p>Develop, maintain and support web application programs for an administrative portal using PHP and related tools. Analyze code for system testing and debugging; create test transactions to find, isolate and rectify issues; and manage
+                            a team. Integrate 3<sup>rd</sup> party applications and client-based systems using Magic XPI under the support of Magic Software Enterprise architects.</p>
+                        <p>
+                            <b>Accomplishments:</b> <br/> &bull; Reconfigured multiple systems to fuel improvements to productivity, efficiency, uptime and accuracy for global business operations. Developed code, system design and test/QA plans for all
+                            solutions and coordinated nationwide rollouts. <br/> &bull; Trained and mentored junior developers in programming methodologies and best practices. <br/> &bull; Served as a core group member in defining and prioritizing technology
+                            investments for ensuring the alignment of process, technology and business objectives. <br/>
+                        </p>
+                    </div>
 
-                        <hr>
+                    <hr>
 
-                        <div class="text">
-                            <h5>Accenture, Inc.</h5>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p>
-                                        Mandaluyong City, Philippines &bull; Full-time <br/>
-                                        April 2021 – Present
-                                        
-                                    </p>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="timeline">
-                                        <div class="now">START</div>   
+                    <div class="text">
+                        <h5>Accenture, Inc.</h5>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>
+                                    Mandaluyong City, Philippines &bull; Full-time <br/> April 2021 – Present
 
-                                        <svg height="5" width="100">
+                                </p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="timeline">
+                                    <div class="now">START</div>
+
+                                    <svg height="5" width="100">
                                             <line x1="0" y1="0" x2="100" y2="0" style="stroke: #4b89b5; stroke-width: 5" />
                                             Sorry, your browser does not support inline SVG.
                                         </svg>
-                                      
-                                        <div class="event1">                                          
-                                            <div class="event1Bubble">
-                                                <div class="eventTitle">Senior Analyst</div>
-                                                <div class="eventTime">
-                                                    <div class="Day">April 2021 – Present</div>
-                                                </div>
-                                            </div>
-                                            <svg height="20" width="20">
-                                                <circle cx="10" cy="11" r="5" fill="#4b89b5" />
-                                            </svg>                                        
-                                        </div>
 
-                                        <svg height="5" width="900">
+                                    <div class="event1">
+                                        <div class="event1Bubble">
+                                            <div class="eventTitle">Sr. Software Engineer</div>
+                                            <div class="eventTime">
+                                                <div class="Day">April 2021 – Present</div>
+                                            </div>
+                                        </div>
+                                        <svg height="20" width="20">
+                                                <circle cx="10" cy="11" r="5" fill="#4b89b5" />
+                                            </svg>
+                                    </div>
+
+                                    <svg height="5" width="900">
                                             <line x1="0" y1="0" x2="900" y2="0" style="stroke: rgba(162, 164, 163, 0.37); stroke-width: 5" />
                                             Sorry, your browser does not support inline SVG.
                                         </svg>
-                                        
-                                        <svg height="20" width="42">
+
+                                    <svg height="20" width="42">
                                             <line x1="1" y1="0" x2="1" y2="20" style="stroke: rgba(162, 164, 163, 0.37); stroke-width: 5" /> 
                                             <circle cx="11" cy="10" r="3" fill="rgba(162, 164, 163, 0.37)" />  
                                             <circle cx="21" cy="10" r="3" fill="rgba(162, 164, 163, 0.37)" />  
                                             <circle cx="31" cy="10" r="3" fill="rgba(162, 164, 163, 0.37)" />    
                                             <line x1="41" y1="0" x2="41" y2="20" style="stroke: rgba(162, 164, 163, 0.37); stroke-width: 5" /> 
-                                        </svg>  
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Work -->
+    <section id="references">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="text-center mb-2">
+                    <div data-animate="fadeInDown">
+                        <h2 class="title" style="margin-bottom:10px!important;">My Works</h2>
+                    </div>
+                </div>
+                <div data-animate="fadeInUp">
+                    <nav id="nav-references">
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="references-professional" data-toggle="tab" href="#nav-professional" role="tab" aria-controls="nav-professional" aria-selected="true">
+                                <p>Professional</p>
+                            </a>
+                            <a class="nav-item nav-link" id="references-personal" data-toggle="tab" href="#nav-personal" role="tab" aria-controls="nav-personal" aria-selected="false">
+                                <p>Personal</p>
+                            </a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tab-content">
+                        <ul id="filter">
+                            <li class="all active"><a href="#" data-filter="all">All</a></li>
+                            <li><a href="#" data-filter="web-app" class="">Web App</a></li>
+                            <li class="no-margin"><a href="#" data-filter="react-js" class="references-personal hide">React JS</a></li>
+                            <li class="no-margin"><a href="#" data-filter="node-js" class="references-professional">Node JS</a></li>
+                            <li><a href="#" data-filter="integration" class="references-professional">Integration</a></li>
+                            <li class="no-margin"><a href="#" data-filter="training-module" class="references-personal hide">Training Module</a></li>
+                            <li class="no-margin"><a href="#" data-filter="blog" class="references-personal hide">Blog</a></li>
+                            <li class="no-margin"><a href="#" data-filter="logo" class="references-personal hide">Logo</a></li>
+                        </ul>
+
+                        <div id="detail">
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto"><span class="close">×</span>
+                                    <div id="detail-slider" class="owl-carousel owl-theme"></div>
+                                    <div class="text-center">
+                                        <h1 id="detail-title" class="title"></h1>
+                                    </div>
+                                    <div id="detail-content"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reference detail-->
+                        <div id="references-masonry">
+                            <div class="row">
+                                <div data-category="react-js" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/logos/react-js.png" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">React JS</h3>
+                                                    <p>Coding Practice</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/logos/react-js.png" class="sr-only reference-description">
+                                            <p class="bg-gray p-2">
+                                                <b>Tic-Tac-Toe (React JS Coding Practice)</b><br/> A basic sample program based in this <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank">tutorial</a>. Coded step-by-step from scratch
+                                                and build the final result.
+
+                                                <a class="text-decoration-none" href="https://jt-reactjs-tictactoe.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a>
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript (React), Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, JavaScript <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="training-module" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development-Training-Module.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">YII 1</h3>
+                                                    <p>for PHP Development</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development-Training-Module.jpg" class="sr-only reference-description">
+                                            <p>
+                                                <b>Course Description:</b> Basic learning how to do a web-based app using PHP and MySQL. This training gives an overview of how to create both front-end and back-end development. The participant learns to
+                                                use PHP frameworks and connect with a database.
+                                            </p>
+                                            <p>
+                                                <b>Prerequisite Concepts:</b> PHP Basics, PHP 5.6 Version
+                                            </p>
+                                            <p>
+                                                <b>Languages, systems, and tools learned:</b><br/> Web Server (IIS, Zend Server) <br/> PHP (YII 1, MVC), JavaScript, jQuery, HTML5, CSS, MySQL <br/> Version Control Repository: Git (GitHub) <br/>
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Year:</b> 2020 <br/>
+                                                    <b>Tags:</b> Profession, Training <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                            <p class="buttons text-center">
+                                                <a href="https://www.yiiframework.com/doc/guide/1.1/en/quickstart.what-is-yii" target="_blank" class="btn btn-outline-primary">
+                                                    <i class="fa fa-globe"></i> Visit website
+                                                </a>
+                                                <a href="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development.pdf" target="_blank" class="btn btn-outline-primary">
+                                                    <i class="fa fa-download"></i> Course Content
+                                                </a>
+                                                <a href="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development-Training-Module.pdf" target="_blank" class="btn btn-outline-primary">
+                                                    <i class="fa fa-download"></i> Training Module
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="blog" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="files/my-works/wonders-beyond-limits/Mt.-Batolusong-Sea-of-Clouds.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h5 reference-title">Wonders Beyond Limits</h3>
+                                                    <p>Blog</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="files/my-works/wonders-beyond-limits/Mt.-Batolusong-Sea-of-Clouds.jpg,files/my-works/wonders-beyond-limits/wonders-beyond-limits-achievement-goals.jpg,files/my-works/wonders-beyond-limits/wonders-beyond-limits-challenge-yourself.jpg,files/my-works/wonders-beyond-limits/wonders-beyond-limits-be-always-amazed.jpg"
+                                            class="sr-only reference-description">
+                                            <p class="text-center">HIKING / TREKKING / TRAVEL BLOG</p>
+                                            <p>
+                                                <b>WondersBeyondLimits</b> tells stories in every challenge within yourself. There are beautiful things you can achieve if you do a hard work and persistence in doing something despite of the difficulty.
+                                                Through this sharing, don't lose hope to try your best to reach your own goal and ended saying, it is "Worth It!"
+                                            </p>
+                                            <p>The page is still on development stage &#128516;</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Year:</b> 2020 <br/>
+                                                    <b>Tags:</b> Hobbies, Blog, Vlog <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                            <p class="buttons text-center">
+                                                <a href="http://wondersbeyondlimits.com" target="_blank" class="btn btn-outline-primary"><i class="fa fa-globe"></i> Visit website</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">HR Timekeeping</h3>
+                                                    <p>Web App</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>Automated reports for the attendance that computes late, undertime and displayed applied approved OTs and leaves.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript, jQuery, Node.js, Socket.io, MS SQL Server <br/>
+                                                    <b>Year:</b> Jun 2018 – Feb 2021 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Web App <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="node-js" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">MS Teams Chatbot</h3>
+                                                    <p>Node JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>Integrated with Microsoft Teams using Bot Framework. Can provide an option using Adaptive Cards and sending Proactive Messages. User can check their attendance for current and previous payroll, answering daily
+                                                health checklist and check their deliverables.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> Node.js, Bot Framework, MS SQL Server <br/>
+                                                    <b>Year:</b> Jun 2018 – Feb 2021 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Node JS <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="integration" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <!--<img src="files/my-works/integration/dispatch-otm-sap.jpg" alt="" class="img-fluid">-->
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">ERP &#187; OTM-SAP</h3>
+                                                    <p>Integration</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--<div data-images="files/my-works/integration/dispatch-otm-sap.jpg" class="sr-only reference-description">-->
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>Integration with Oracle Transportation Management (OTM) and SAP to process the notifications of an assignee of trucks and shipment deliveries by real-time sending of events.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> XPI (Magic Software), C#.Net, MS SQL Server, JSON/REST API (MuleSoft), MSMQ <br/>
+                                                    <b>Year:</b> Jan 2017 – Jul 2017 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Integration <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Retail Merchandising Audits</h3>
+                                                    <p>Web App</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>Provide monitoring of On-Shelf Availability and Offtakes. Reports that can display current products inventory and the list of stockout.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript, jQuery, MS SQL Server <br/>
+                                                    <b>Year:</b> Jun 2016 – Feb 2021 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Web App <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="integration" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <!--<img src="files/my-works/integration/erp-sap.jpg" alt="" class="img-fluid">-->
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">ERP &#187; SAP</h3>
+                                                    <p>Integration</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--<div data-images="files/my-works/integration/erp-sap.jpg" class="sr-only reference-description">-->
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>SAP integration with an ERP System to extend maintenance's and transactions out of the shell. Incorporate with external application to expand the range of data gathering.
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> XPI (Magic Software), SAP ECC 6.0 & RFC (3<sup>rd</sup> Party), MySQL, XML, CSV <br/>
+                                                    <b>Year:</b> Oct 2015 – Apr 2016 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Integration <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="node-js" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Notification Listener</h3>
+                                                    <p>Node JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>A background listener that can emit messages and notification to the client-side. It is also has a capability to receive requests from the client-side, then process on the server-side like uploading large CSV
+                                                data then emit the total processed as a progress bar.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> Node.js, Socket.io, SOAP API, MySQL <br/>
+                                                    <b>Year:</b> Jun 2015 – Feb 2021 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Node JS <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Inventory Management</h3>
+                                                    <p>Web App</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>Inventory system that can maintain and gathers stocks in one place. Can track inventory from receiving to delivery and issuance. The user can generate reports that will display product summary and its movement
+                                                from the beginning to the ending inventory.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript, jQuery, Node.js, Socket.io, MySQL <br/>
+                                                    <b>Year:</b> Jun 2015 – Feb 2021 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Web App <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Sales Monitoring</h3>
+                                                    <p>Web App</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>A centralize platform that allows users to monitor total sales across sales offices. Provides the capabilities to track salesmen KPIs, plot GPS tracks and display its current location.</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript, jQuery, MySQL <br/>
+                                                    <b>Year:</b> Oct 2013 – Feb 2021 <br/>
+                                                    <b>Associated with:</b> In1Go Technologies, Inc. <br/>
+                                                    <b>Tags:</b> Profession, Web App <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="logo" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="files/my-works/logos/JTT-Pinas.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">JTT Pinas</h3>
+                                                    <p>Personal Logo</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="files/my-works/logos/JTT-Pinas-Raw.jpg,files/my-works/logos/JTT-Pinas-Layout-Thin.jpg,files/my-works/logos/JTT-Pinas.jpg,files/my-works/logos/JTT-Pinas-Emblem.jpg" class="sr-only reference-description">
+                                            <p>
+                                                <b>JTT Pinas</b> was inspired by my initials and the Philippine Flag. Layout from the scratch of paper, captured by a camera, traced and colored using the photoshop.
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Year:</b> 2012 <br/>
+                                                    <b>Tags:</b> Hobbies, Personal Logo, JTT Logos <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="logo" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="files/my-works/logos/JTT-Emblem.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">JTT Emblem</h3>
+                                                    <p>Personal Logo</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="files/my-works/logos/JTT-Emblem-Raw.jpg,files/my-works/logos/JTT-Emblem-Layout.jpg,files/my-works/logos/JTT-Emblem.jpg" class="sr-only reference-description">
+                                            <p>
+                                                <b>JTT Emblem</b> was inspired by my initials. Layout from the scratch of paper, captured by a camera, traced and colored using the photoshop.
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Year:</b> 2012 <br/>
+                                                    <b>Tags:</b> Hobbies, Personal Logo, JTT Logos <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="logo" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="files/my-works/logos/JTT-Sign.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">JTT Sign</h3>
+                                                    <p>Personal Logo</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="files/my-works/logos/JTT-Sign-Raw.jpg,files/my-works/logos/JTT-Sign-Layout.jpg,files/my-works/logos/JTT-Sign-Thin.jpg,files/my-works/logos/JTT-Sign.jpg" class="sr-only reference-description">
+                                            <p>
+                                                <b>JTT Sign</b> was inspired by my initials. Layout, cut and folded from the scratch of paper, captured by a camera, traced and colored using the photoshop.
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Year:</b> 2012 <br/>
+                                                    <b>Tags:</b> Hobbies, Personal Logo, JTT Logos <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-personal hide">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Automated Aptitude Examination</h3>
+                                                    <p>Web App</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
+                                            <p>College thesis. Web-based application to automate the aptitude examination for the first year students. Deployed and can accessed through Local Area Network (LAN).</p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> Native PHP, MySQL, JavaScript <br/>
+                                                    <b>Year:</b> Jun 2011 – Mar 2012 <br/>
+                                                    <b>Tags:</b> Thesis, Web App <br/><br/>
+                                                    <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -369,593 +828,188 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- My Work -->
-        <section id="references">
-            <div class="container">
-                <div class="col-sm-12">
-                    <div class="text-center mb-2">
-                        <div data-animate="fadeInDown">
-                            <h2 class="title" style="margin-bottom:10px!important;">My Works</h2>
+    <!-- Certification -->
+    <section id="certification" class="testimonials-section bg-gray">
+        <div class="container">
+            <header class="text-center mb-3">
+                <h2 data-animate="fadeInDown" class="title" style="margin-bottom: 0px!important;">Certifications & Awards</h2>
+            </header>
+            <ul data-animate="fadeInUp" class="owl-carousel owl-theme testimonials equalize-height">
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/2019-Employee-of-the-Year-Award.jpg">
                         </div>
-                    </div>
-                    <div data-animate="fadeInUp">
-                        <nav id="nav-references">
-                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="references-professional" data-toggle="tab" href="#nav-professional" role="tab" aria-controls="nav-professional" aria-selected="true">
-                                    <p>Professional</p>
-                                </a>
-                                <a class="nav-item nav-link" id="references-personal" data-toggle="tab" href="#nav-personal" role="tab" aria-controls="nav-personal" aria-selected="false">
-                                    <p>Personal</p>
-                                </a>
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tab-content">
-                            <ul id="filter">
-                                <li class="all active"><a href="#" data-filter="all">All</a></li>
-                                <li><a href="#" data-filter="web-app" class="">Web App</a></li>
-                                <li><a href="#" data-filter="integration" class="references-professional">Integration</a></li>
-                                <li class="no-margin"><a href="#" data-filter="javascript" class="references-personal hide">JavaScript</a></li>
-                                <li class="no-margin"><a href="#" data-filter="training-module" class="references-personal hide">Training Module</a></li>
-                                <li class="no-margin"><a href="#" data-filter="blog" class="references-personal hide">Blog</a></li>
-                                <li class="no-margin"><a href="#" data-filter="logo" class="references-personal hide">Logo</a></li>
-                            </ul>
-
-                            <div id="detail">
-                                <div class="row">
-                                    <div class="col-lg-8 mx-auto"><span class="close">×</span>
-                                        <div id="detail-slider" class="owl-carousel owl-theme"></div>
-                                        <div class="text-center">
-                                            <h1 id="detail-title" class="title"></h1>
-                                        </div>
-                                        <div id="detail-content"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Reference detail-->
-                            <div id="references-masonry">
-                                <div class="row">
-                                    <div data-category="javascript" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="img/logos/react-js.png" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">React JS</h3>
-                                                        <p>Coding Practice</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="img/logos/react-js.png" class="sr-only reference-description">
-                                                <p class="bg-gray p-2">
-                                                    <b>Tic-Tac-Toe (React JS Coding Practice)</b><br/> A basic sample program based in this <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank">tutorial</a>. Coded step-by-step from scratch and
-                                                    build the final result.
-
-                                                    <a class="text-decoration-none" href="https://jt-reactjs-tictactoe.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a>
-                                                </p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> JavaScript (React), Git, Heroku <br/>
-                                                        <b>Tags:</b> Profession, Web App, JavaScript <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="training-module" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development-Training-Module.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">YII 1</h3>
-                                                        <p>for PHP Development</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development-Training-Module.jpg" class="sr-only reference-description">
-                                                <p>
-                                                    <b>Course Description:</b> Basic learning how to do a web-based app using PHP and MySQL. This training gives an overview of how to create both front-end and back-end development. The participant learns to
-                                                    use PHP frameworks and connect with a database.
-                                                </p>
-                                                <p>
-                                                    <b>Prerequisite Concepts:</b> PHP Basics, PHP 5.6 Version
-                                                </p>
-                                                <p>
-                                                    <b>Languages, systems, and tools learned:</b><br/> Web Server (IIS, Zend Server) <br/> PHP (YII 1, MVC), JavaScript (jQuery), HTML5, CSS, MySQL <br/> Version Control Repository: Git (GitHub) <br/>
-                                                </p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Year:</b> 2020 <br/>
-                                                        <b>Tags:</b> Profession, Training <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                                <p class="buttons text-center">
-                                                    <a href="https://www.yiiframework.com/doc/guide/1.1/en/quickstart.what-is-yii" target="_blank" class="btn btn-outline-primary">
-                                                        <i class="fa fa-globe"></i> Visit website
-                                                    </a>
-                                                    <a href="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development.pdf" target="_blank" class="btn btn-outline-primary">
-                                                        <i class="fa fa-download"></i> Course Content
-                                                    </a>
-                                                    <a href="files/my-works/training-modules/JTTorate-Portfolio-YII-1-for-PHP-Development-Training-Module.pdf" target="_blank" class="btn btn-outline-primary">
-                                                        <i class="fa fa-download"></i> Training Module
-                                                    </a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="blog" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="files/my-works/wonders-beyond-limits/Mt.-Batolusong-Sea-of-Clouds.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h5 reference-title">Wonders Beyond Limits</h3>
-                                                        <p>Blog</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="files/my-works/wonders-beyond-limits/Mt.-Batolusong-Sea-of-Clouds.jpg,files/my-works/wonders-beyond-limits/wonders-beyond-limits-achievement-goals.jpg,files/my-works/wonders-beyond-limits/wonders-beyond-limits-challenge-yourself.jpg,files/my-works/wonders-beyond-limits/wonders-beyond-limits-be-always-amazed.jpg"
-                                                class="sr-only reference-description">
-                                                <p class="text-center">HIKING / TREKKING / TRAVEL BLOG</p>
-                                                <p>
-                                                    <b>WondersBeyondLimits</b> tells stories in every challenge within yourself. There are beautiful things you can achieve if you do a hard work and persistence in doing something despite of the difficulty.
-                                                    Through this sharing, don't lose hope to try your best to reach your own goal and ended saying, it is "Worth It!"
-                                                </p>
-                                                <p>The page is still on development stage &#128516;</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Year:</b> 2020 <br/>
-                                                        <b>Tags:</b> Hobbies, Blog, Vlog <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                                <p class="buttons text-center">
-                                                    <a href="http://wondersbeyondlimits.com" target="_blank" class="btn btn-outline-primary"><i class="fa fa-globe"></i> Visit website</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">HR Timekeeping</h3>
-                                                        <p>Web App</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>Automated reports for the attendance that computes late, undertime and displayed applied approved OTs and leaves.</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript (jQuery), Node.js, Socket.io, MS SQL Server <br/>
-                                                        <b>Year:</b> Jun 2018 – Feb 2021 <br/>
-                                                        <b>Tags:</b> Profession, Web App <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="integration" class="reference-item col-lg-3 col-md-6 references-professional">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <!--<img src="files/my-works/integration/dispatch-otm-sap.jpg" alt="" class="img-fluid">-->
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">ERP &#187; OTM-SAP</h3>
-                                                        <p>Integration</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!--<div data-images="files/my-works/integration/dispatch-otm-sap.jpg" class="sr-only reference-description">-->
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>Integration with Oracle Transportation Management (OTM) and SAP to process the notifications of an assignee of trucks and shipment deliveries by real-time sending of events.</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> XPI (Magic Software), C#.Net, MS SQL Server, JSON/REST API (MuleSoft), MSMQ <br/>
-                                                        <b>Year:</b> Jan 2017 – Jul 2017 <br/>
-                                                        <b>Tags:</b> Profession, Integration <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">Retail Merchandising Audits</h3>
-                                                        <p>Web App</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>Provide monitoring of On-Shelf Availability and Offtakes. Reports that can display current products inventory and the list of stockout.</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript (jQuery), MS SQL Server <br/>
-                                                        <b>Year:</b> Jun 2016 – Feb 2021 <br/>
-                                                        <b>Tags:</b> Profession, Web App <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="integration" class="reference-item col-lg-3 col-md-6 references-professional">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <!--<img src="files/my-works/integration/erp-sap.jpg" alt="" class="img-fluid">-->
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">ERP &#187; SAP</h3>
-                                                        <p>Integration</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <!--<div data-images="files/my-works/integration/erp-sap.jpg" class="sr-only reference-description">-->
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>SAP integration with an ERP System to extend maintenance's and transactions out of the shell. Incorporate with external application to expand the range of data gathering.
-                                                </p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> XPI (Magic Software), SAP ECC 6.0 & RFC (3<sup>rd</sup> Party), MySQL, XML, CSV <br/>
-                                                        <b>Year:</b> Oct 2015 – Apr 2016 <br/>
-                                                        <b>Tags:</b> Profession, Integration <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">Inventory Management</h3>
-                                                        <p>Web App</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>Inventory system that can maintain and gathers stocks in one place. Can track inventory from receiving to delivery and issuance. The user can generate reports that will display product summary and its movement
-                                                    from the beginning to the ending inventory.</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript (jQuery), Node.js, Socket.io, MySQL <br/>
-                                                        <b>Year:</b> Jun 2015 – Feb 2021 <br/>
-                                                        <b>Tags:</b> Profession, Web App <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-professional">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">Sales Monitoring</h3>
-                                                        <p>Web App</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>A centralize platform that allows users to monitor total sales across sales offices. Provides the capabilities to track salesmen KPIs, plot GPS tracks and display its current location.</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> YII 1 PHP Framework, SOAP API, JavaScript (jQuery), MySQL <br/>
-                                                        <b>Year:</b> Oct 2013 – Feb 2021 <br/>
-                                                        <b>Tags:</b> Profession, Web App <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="logo" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="files/my-works/logos/JTT-Pinas.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">JTT Pinas</h3>
-                                                        <p>Personal Logo</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="files/my-works/logos/JTT-Pinas-Raw.jpg,files/my-works/logos/JTT-Pinas-Layout-Thin.jpg,files/my-works/logos/JTT-Pinas.jpg,files/my-works/logos/JTT-Pinas-Emblem.jpg" class="sr-only reference-description">
-                                                <p>
-                                                    <b>JTT Pinas</b> was inspired by my initials and the Philippine Flag. Layout from the scratch of paper, captured by a camera, traced and colored using the photoshop.
-                                                </p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Year:</b> 2012 <br/>
-                                                        <b>Tags:</b> Hobbies, Personal Logo, JTT Logos <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="logo" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="files/my-works/logos/JTT-Emblem.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">JTT Emblem</h3>
-                                                        <p>Personal Logo</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="files/my-works/logos/JTT-Emblem-Raw.jpg,files/my-works/logos/JTT-Emblem-Layout.jpg,files/my-works/logos/JTT-Emblem.jpg" class="sr-only reference-description">
-                                                <p>
-                                                    <b>JTT Emblem</b> was inspired by my initials. Layout from the scratch of paper, captured by a camera, traced and colored using the photoshop.
-                                                </p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Year:</b> 2012 <br/>
-                                                        <b>Tags:</b> Hobbies, Personal Logo, JTT Logos <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="logo" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="files/my-works/logos/JTT-Sign.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">JTT Sign</h3>
-                                                        <p>Personal Logo</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="files/my-works/logos/JTT-Sign-Raw.jpg,files/my-works/logos/JTT-Sign-Layout.jpg,files/my-works/logos/JTT-Sign-Thin.jpg,files/my-works/logos/JTT-Sign.jpg" class="sr-only reference-description">
-                                                <p>
-                                                    <b>JTT Sign</b> was inspired by my initials. Layout, cut and folded from the scratch of paper, captured by a camera, traced and colored using the photoshop.
-                                                </p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Year:</b> 2012 <br/>
-                                                        <b>Tags:</b> Hobbies, Personal Logo, JTT Logos <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div data-category="web-app" class="reference-item col-lg-3 col-md-6 references-personal hide">
-                                        <div class="reference">
-                                            <a href="#">
-                                                <img src="img/no-preview-available.jpg" alt="" class="img-fluid">
-                                                <div class="overlay">
-                                                    <div class="inner">
-                                                        <h3 class="h4 reference-title">Automated Aptitude Examination</h3>
-                                                        <p>Web App</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <div data-images="img/no-preview-available.jpg" class="sr-only reference-description">
-                                                <p>College thesis. Web-based application to automate the aptitude examination for the first year students. Deployed and can accessed through Local Area Network (LAN).</p>
-                                                <div>
-                                                    <p class="tags">
-                                                        <b>Tools:</b> Native PHP, MySQL, JavaScript <br/>
-                                                        <b>Year:</b> Jun 2011 – Mar 2012 <br/>
-                                                        <b>Tags:</b> Thesis, Web App <br/><br/>
-                                                        <a class="disclaimer" href="disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/in1Go.png">-->
+                                <h5>2019 Employee of the Year Awardee</h5>
+                                <p>In1Go Technologies, Inc. &bull; Dec 2019</p>
                             </div>
                         </div>
                     </div>
+                </li>
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/UP-NEC-Python-for-Data-Science-and-Analytics-Module-H.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/UP.png">-->
+                                <h5>Python for Data Science and Analytics</h5>
+                                <p>UP NEC &bull; Oct 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/Magic-University-Course-XPI-Workshop-2015.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/MSE.png">-->
+                                <h5>Magic University Course</h5>
+                                <p>MSE Asia &bull; Nov 2015</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/Best-in-Software-Project-2012.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/ASU.jpg">-->
+                                <h5>Best Software Project (Thesis)</h5>
+                                <p>ASU-CIT &bull; March 2012</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/Dean-Lister-4th-Year-2nd-Semester.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/CSC.png">-->
+                                <h5>Dean's Lister <br/>4<sup>th</sup> Year 2<sup>nd</sup> Semester </h5>
+                                <p>ASU-CIT &bull; March 2012</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/Dean-Lister-4th-Year-1st-Semester.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/CSC.png">-->
+                                <h5>Dean's Lister <br/>4<sup>th</sup> Year 1<sup>st</sup> Semester </h5>
+                                <p>ASU-CIT &bull; March 2012</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="testimonial full-height">
+                        <div class="text">
+                            <img alt="" src="files/certificates-awards/CSC-Sub-Professional.jpg">
+                        </div>
+                        <div class="bottom">
+                            <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
+                                <!--<img alt="" src="img/logos/CSC.png">-->
+                                <h5>Sub-Professional Eligible</h5>
+                                <p>Civil Service Commission &bull; Dec 2011</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact-->
+    <section id="contact" class="bg-gradient services-section">
+        <div class="container">
+            <header class="text-center">
+                <h2 class="title">Contact Me</h2>
+            </header>
+            <div class="row mb-4">
+                <div class="col-lg-8 mx-auto">
+                    <form id="contact-me-form" method="post" action="">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="first_name" placeholder="Your first name *" required="required" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="last_name" placeholder="Your last name *" required="required" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="email" placeholder="Your email *" required="required" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="contact_no" placeholder="Your contact number" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <textarea name="message" placeholder="Message for me *" rows="4" required="required" class="form-control contact-me-form-message-input"></textarea>
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button id="contact-me-btn" class="btn btn-outline-light">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
 
-        <!-- Certification -->
-        <section id="certification" class="testimonials-section bg-gray">
-            <div class="container">
-                <header class="text-center mb-3">
-                    <h2 data-animate="fadeInDown" class="title" style="margin-bottom: 0px!important;">Certifications & Awards</h2>
-                </header>
-                <ul data-animate="fadeInUp" class="owl-carousel owl-theme testimonials equalize-height">
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/2019-Employee-of-the-Year-Award.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/in1Go.png">-->
-                                    <h5>2019 Employee of the Year Awardee</h5>
-                                    <p>In1Go Technologies, Inc. &bull; Dec 2019</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/UP-NEC-Python-for-Data-Science-and-Analytics-Module-H.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/UP.png">-->
-                                    <h5>Python for Data Science and Analytics</h5>
-                                    <p>UP NEC &bull; Oct 2019</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/Magic-University-Course-XPI-Workshop-2015.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/MSE.png">-->
-                                    <h5>Magic University Course</h5>
-                                    <p>MSE Asia &bull; Nov 2015</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/Best-in-Software-Project-2012.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/ASU.jpg">-->
-                                    <h5>Best Software Project (Thesis)</h5>
-                                    <p>ASU-CIT &bull; March 2012</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/Dean-Lister-4th-Year-2nd-Semester.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/CSC.png">-->
-                                    <h5>Dean's Lister <br/>4<sup>th</sup> Year 2<sup>nd</sup> Semester </h5>
-                                    <p>ASU-CIT &bull; March 2012</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/Dean-Lister-4th-Year-1st-Semester.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/CSC.png">-->
-                                    <h5>Dean's Lister <br/>4<sup>th</sup> Year 1<sup>st</sup> Semester </h5>
-                                    <p>ASU-CIT &bull; March 2012</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <div class="testimonial full-height">
-                            <div class="text">
-                                <img alt="" src="files/certificates-awards/CSC-Sub-Professional.jpg">
-                            </div>
-                            <div class="bottom">
-                                <div class="name-picture" style="float: left!important; width: 100%!important; text-align: center!important;">
-                                    <!--<img alt="" src="img/logos/CSC.png">-->
-                                    <h5>Sub-Professional Eligible</h5>
-                                    <p>Civil Service Commission &bull; Dec 2011</p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+            <hr>
 
-        <!-- Contact-->
-        <section id="contact" class="bg-gradient services-section">
-            <div class="container">
-                <header class="text-center">
-                    <h2 class="title">Contact Me</h2>
-                </header>
-                <div class="row mb-4">
-                    <div class="col-lg-8 mx-auto">
-                        <form id="contact-me-form" method="post" action="">
-                            <div class="messages"></div>
-                            <div class="controls">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" name="first_name" placeholder="Your first name *" required="required" class="form-control">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="last_name" placeholder="Your last name *" required="required" class="form-control">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="email" placeholder="Your email *" required="required" class="form-control">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" name="contact_no" placeholder="Your contact number" class="form-control">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <textarea name="message" placeholder="Message for me *" rows="4" required="required" class="form-control contact-me-form-message-input"></textarea>
-                                    </div>
-                                    <div class="col-md-12 text-center">
-                                        <button id="contact-me-btn" class="btn btn-outline-light">Send Message</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="col-lg-12 text-center">
-                    <div class="icon">
-                        <a href="mailto:jttorate@gmail.com?subject=Website Inquiry" title="jttorate@gmail.com"><i class="fa fa-envelope-square"></i></a>
-                        <a href="https://www.linkedin.com/in/jttorate" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-                        <a href="https://www.facebook.com/jttorate" target="_blank"><i class="fa fa-facebook-square"></i></a>
-                        <a href="https://www.instagram.com/hypenelo" target="_blank" title="@hypenelo"><i class="fa fa-instagram"></i></a>
-                        <a href="https://github.com/jttorate" target="_blank"><i class="fa fa-github-square"></i></a>
-                    </div>
+            <div class="col-lg-12 text-center">
+                <div class="icon">
+                    <a href="mailto:jttorate@gmail.com?subject=Website Inquiry" title="jttorate@gmail.com"><i class="fa fa-envelope-square"></i></a>
+                    <a href="https://www.linkedin.com/in/jttorate" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://www.facebook.com/jttorate" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/hypenelo" target="_blank" title="@hypenelo"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/jttorate" target="_blank"><i class="fa fa-github-square"></i></a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Scroll Top Button-->
-        <a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
+    <!-- Scroll Top Button-->
+    <a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
 
-        <!-- Footer-->
-        <div id="layout_footer"></div>
+    <!-- Footer-->
+    <div id="layout_footer"></div>
 
-        <!-- JavaScript files-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
-        <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-        <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
-        <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-        <script src="js/front.js"></script>
-        <script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
-        <script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
-        <script src="js/layout.js"></script>
-        <script src="js/custom.js"></script>
-    </body>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="js/front.js"></script>
+    <script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
+    <script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
+    <script src="js/layout.js"></script>
+    <script src="js/custom.js"></script>
+</body>
 
 </html>
