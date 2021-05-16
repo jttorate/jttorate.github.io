@@ -383,27 +383,5 @@
 
 #content-page.content-title {
 	color: #222;
-}
-
-/* References Page */
-#header-reference {
-	padding: 20px 0 20px 0;
-}
-
-#header-reference .header {
-	padding-left: 15px;
-}
-
-#header-reference .header a {
-	text-decoration: none;
-	color: #fff;
-}
-
-#header-reference-content {
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-
-#header-reference-content .content-title {
-	color: #222;
+	margin-bottom: 20px;
 }
