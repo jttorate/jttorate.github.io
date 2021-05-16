@@ -9,268 +9,274 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://jttorate.info/vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://jttorate.info/vendor/font-awesome/css/font-awesome.min.css">
     <!-- Google fonts - Roboto + Roboto Slab-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
     <!-- owl carousel-->
-    <link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="../vendor/owl.carousel/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="https://jttorate.info/vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="https://jttorate.info/vendor/owl.carousel/assets/owl.theme.default.css">
     <!-- animate.css-->
-    <link rel="stylesheet" href="../vendor/animate.css/animate.css">
+    <link rel="stylesheet" href="https://jttorate.info/vendor/animate.css/animate.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="../css/style.blue.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="https://jttorate.info/css/style.blue.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://jttorate.info/css/custom.css">
     <!-- Leaflet CSS - For the map-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="../img/logos/logo.png">
+    <link rel="shortcut icon" href="https://jttorate.info/img/logos/logo.png">
     <!-- Tweaks for older IEs-->
     <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+                    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+                    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
 </head>
 
 <body>
-    <footer id="header-reference" class="main-footer">
-        <div class="container">
-            <div class="row">
-                <h2 class="text-shadow header">
-                    <a href="https://jttorate.info">
-                        jttorate.info
-                    </a>
-                </h2>
-            </div>
-        </div>
-    </footer>
+    <!-- Header-->
+    <div id="layout_header"></div>
 
-    <section id="header-reference-content">
+    <section id="content-page">
         <div class="container">
-            <h3 class="content-title">
+            <h4 class="content-title">
                 References
-            </h3>
+            </h4>
             <div>
-                <ul id="filter">
-                    <li class="all active"><a href="#" data-filter="all">All</a></li>
-                    <li><a href="#" data-filter="react-js" class="">React JS</a></li>
-                    <li><a href="#" data-filter="node-js" class="">Node JS</a></li>
+                <ul class="nav nav-tabs" id="references-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="thumbnail-tab" data-toggle="tab" href="#thumbnail" role="tab" aria-controls="thumbnail" aria-selected="true">Thumbnail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="document-list-tab" data-toggle="tab" href="#document-list" role="tab" aria-controls="document-list" aria-selected="false">Document List</a>
+                    </li>
                 </ul>
+                <div class="tab-content" id="references-tab-content">
+                    <div class="tab-pane fade show active" id="thumbnail" role="tabpanel" aria-labelledby="thumbnail-tab">
+                        <ul id="filter">
+                            <li class="all active"><a href="#" data-filter="all">All</a></li>
+                            <li><a href="#" data-filter="react-js" class="">React JS</a></li>
+                            <li><a href="#" data-filter="node-js" class="">Node JS</a></li>
+                        </ul>
 
-                <div id="detail">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto"><span class="close">×</span>
-                            <div id="detail-slider" class="owl-carousel owl-theme"></div>
-                            <div class="text-center">
-                                <h1 id="detail-title" class="title"></h1>
+                        <div id="detail">
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto"><span class="close">×</span>
+                                    <div id="detail-slider" class="owl-carousel owl-theme"></div>
+                                    <div class="text-center">
+                                        <h1 id="detail-title" class="title"></h1>
+                                    </div>
+                                    <div id="detail-content"></div>
+                                </div>
                             </div>
-                            <div id="detail-content"></div>
+                        </div>
+
+                        <!-- Reference detail-->
+                        <div id="references-masonry">
+                            <div class="row">
+                                <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Course Goal</h3>
+                                                    <p>React JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
+                                            <p>
+
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, React JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-reactjs-course-goal.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-course-goal" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="reactjs/course-goal"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Expense App</h3>
+                                                    <p>React JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
+                                            <p>
+
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, React JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-reactjs-expense-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-expense-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="reactjs/expense-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">User App</h3>
+                                                    <p>React JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
+                                            <p>
+                                                &bull; Reusable components like Button, Card & Modal <br/> &bull; CSS Modules <br/> &bull; Portals <br/> &bull; <b>useRef</b> (Uncontrolled by React), <b>useState</b> (Controlled by React),
+                                                <b>useEffect</b> <br/><br/>
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, React JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-reactjs-user-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-user-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="reactjs/user-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="node-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/node-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Weather App</h3>
+                                                    <p>Node JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/node-js.jpg" class="sr-only reference-description">
+                                            <p>
+                                                &bull; It uses data from mapbox.com and weatherstack.com <br/><br/>
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, Node.js, Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, Node JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-nodejs-weather-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-weather-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="nodejs/weather-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="node-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/node-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Task Manager REST API</h3>
+                                                    <p>Node JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/node-js.jpg" class="sr-only reference-description">
+                                            <p>
+                                                &bull; Express.js <br/> &bull; SendGrid (Email Service) <br/> &bull; Unit Testing (Jest) <br/><br/>
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, Node.js, Git, Heroku, MongoDB <br/>
+                                                    <b>Tags:</b> Profession, Web App, Node JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-nodejs-task-manager-api.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-task-manager-api" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="nodejs/task-manager-api"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="node-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/node-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Chat App</h3>
+                                                    <p>Node JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/node-js.jpg" class="sr-only reference-description">
+                                            <p>
+
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, Node.js, Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, Node JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-nodejs-chat-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-chat-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="nodejs/chat-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
+                                    <div class="reference">
+                                        <a href="#">
+                                            <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
+                                            <div class="overlay">
+                                                <div class="inner">
+                                                    <h3 class="h4 reference-title">Tic-Tac-Toe</h3>
+                                                    <p>React JS</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
+                                            <p>
+                                                A basic sample program based in this <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank">tutorial</a>. Coded step-by-step from scratch and build the final result. <br/><br/>
+                                            </p>
+                                            <div>
+                                                <p class="tags">
+                                                    <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
+                                                    <b>Tags:</b> Profession, Web App, React JS <br/>
+                                                    <a class="text-decoration-none" href="https://jt-reactjs-tictactoe.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
+                                                    <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-tictactoe" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
+                                                    <a class="text-decoration-none" href="reactjs/tictactoe"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
+                                                    <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Reference detail-->
-                <div id="references-masonry">
-                    <div class="row">
-                        <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">Course Goal</h3>
-                                            <p>React JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
-                                    <p>
-
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
-                                            <b>Tags:</b> Profession, Web App, React JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-reactjs-course-goal.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-course-goal" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="reactjs/course-goal"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">Expense App</h3>
-                                            <p>React JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
-                                    <p>
-
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
-                                            <b>Tags:</b> Profession, Web App, React JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-reactjs-expense-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-expense-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="reactjs/expense-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">User App</h3>
-                                            <p>React JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
-                                    <p>
-                                        &bull; Reusable components like Button, Card & Modal <br/> &bull; CSS Modules <br/> &bull; Portals <br/> &bull; <b>useRef</b> (Uncontrolled by React), <b>useState</b> (Controlled by React),
-                                        <b>useEffect</b> <br/><br/>
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
-                                            <b>Tags:</b> Profession, Web App, React JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-reactjs-user-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-user-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="reactjs/user-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-category="node-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/node-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">Weather App</h3>
-                                            <p>Node JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/node-js.jpg" class="sr-only reference-description">
-                                    <p>
-                                        &bull; It uses data from mapbox.com and weatherstack.com <br/><br/>
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, Node.js, Git, Heroku <br/>
-                                            <b>Tags:</b> Profession, Web App, Node JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-nodejs-weather-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-weather-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="nodejs/weather-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-category="node-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/node-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">Task Manager REST API</h3>
-                                            <p>Node JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/node-js.jpg" class="sr-only reference-description">
-                                    <p>
-                                        &bull; Express.js <br/> &bull; SendGrid (Email Service) <br/> &bull; Unit Testing (Jest) <br/><br/>
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, Node.js, Git, Heroku, MongoDB <br/>
-                                            <b>Tags:</b> Profession, Web App, Node JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-nodejs-task-manager-api.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-task-manager-api" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="nodejs/task-manager-api"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-category="node-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/node-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">Chat App</h3>
-                                            <p>Node JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/node-js.jpg" class="sr-only reference-description">
-                                    <p>
-
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, Node.js, Git, Heroku <br/>
-                                            <b>Tags:</b> Profession, Web App, Node JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-nodejs-chat-app.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/nodejs-chat-app" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="nodejs/chat-app"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-category="react-js" class="reference-item col-lg-3 col-md-6">
-                            <div class="reference">
-                                <a href="#">
-                                    <img src="../files/my-works/react-js.jpg" alt="" class="img-fluid">
-                                    <div class="overlay">
-                                        <div class="inner">
-                                            <h3 class="h4 reference-title">Tic-Tac-Toe</h3>
-                                            <p>React JS</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div data-images="../files/my-works/react-js.jpg" class="sr-only reference-description">
-                                    <p>
-                                        A basic sample program based in this <a href="https://reactjs.org/tutorial/tutorial.html" target="_blank">tutorial</a>. Coded step-by-step from scratch and build the final result. <br/><br/>
-                                    </p>
-                                    <div>
-                                        <p class="tags">
-                                            <b>Tools:</b> JavaScript, React, Git, Heroku <br/>
-                                            <b>Tags:</b> Profession, Web App, React JS <br/>
-                                            <a class="text-decoration-none" href="https://jt-reactjs-tictactoe.herokuapp.com/" target="_blank"><i class="fa fa-laptop"></i> Visit Demo</a> |
-                                            <a class="text-decoration-none" href="https://github.com/jttorate/reactjs-tictactoe" target="_blank"><i class="fa fa-github"></i> GitHub</a> |
-                                            <a class="text-decoration-none" href="reactjs/tictactoe"><i class="fa fa-file-code-o"></i> View Page</a> <br/><br/>
-                                            <a class="disclaimer" href="../disclaimer" target="_blank">See Disclaimer <i class="fa fa-link"></i></a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="tab-pane fade" id="document-list" role="tabpanel" aria-labelledby="document-list-tab">
+                        <p style="height: 300px;"></p>
                     </div>
                 </div>
             </div>
@@ -281,35 +287,30 @@
     <a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
 
     <!-- Footer-->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a href="https://jttorate.info">
-                        <img src="../img/logos/logo.png" width="50" class="image rounded-circle img-fluid">
-                    </a>
-                    <p class="mt-3">
-                        Copyright © 2020 JUNNEL T TORATE <br/> All Rights Reserved
-                    </p>
-                    <p>
-                        <a href=../disclaimer ">Disclaimer</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="layout_footer"></div>
 
     <!-- JavaScript files-->
-    <script src="../vendor/jquery/jquery.min.js "></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
-    <script src="../vendor/jquery.cookie/jquery.cookie.js "></script>
-    <script src="../vendor/owl.carousel/owl.carousel.min.js "></script>
-    <script src="../vendor/waypoints/lib/jquery.waypoints.min.js "></script>
-    <script src="../vendor/jquery.counterup/jquery.counterup.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js "></script>
-    <script src="../js/front.js "></script>
-    <script src="https://goessner.net/download/prj/jsonxml/xml2json.js "></script>
-    <script src="../js/scroll-top.js "></script>
+    <script src="https://jttorate.info/vendor/jquery/jquery.min.js"></script>
+    <script src="https://jttorate.info/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://jttorate.info/vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="https://jttorate.info/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="https://jttorate.info/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="https://jttorate.info/vendor/jquery.counterup/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <script src="https://jttorate.info/js/front.js"></script>
+    <script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
+    <script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
+    <script src="https://jttorate.info/js/scroll-top.js"></script>
+    <script src="https://jttorate.info/js/cookie-policy.js"></script>
+    <script src="https://jttorate.info/js/custom.js"></script>
+
+    <script>
+        $(function() {
+            $('#layout_header').load("../layout/header.html");
+            $('#layout_footer').load("../layout/footer.html");
+        });
+    </script>
 </body>
 
 </html>
