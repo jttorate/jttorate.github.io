@@ -1,1 +1,1 @@
-Junnel T Torate Portfolio
+Junnel T Torate

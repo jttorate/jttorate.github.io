@@ -1,23 +1,5 @@
 /* your script go here */
 
-/* Back To Top */
-$(document).ready(function () {
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-            $('#back-to-top').fadeIn();
-        } else {
-            $('#back-to-top').fadeOut();
-        }
-    });
-    /* Scroll body to 0px on click */
-    $('#back-to-top').click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 400);
-        return false;
-    });
-});
-
 /* Portfolio Logger */
 //var logger_url = "http://localhost/heroku/jttorate-portfolio-logger/index.php?r=api/webservice&ws=1";
 var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1";
