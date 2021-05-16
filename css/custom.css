@@ -365,6 +365,26 @@
 	filter: opacity(0.3);
 }
 
+/* Generic Page */
+#header-page {
+	padding: 10px 0 10px 0;
+}
+
+#header-page a {
+	color: #fff;
+	padding-top: 20px;
+	padding-left: 15px;
+	text-decoration: none;
+}
+
+#content-page {
+	padding: 20px 0 20px 0;
+}
+
+#content-page.content-title {
+	color: #222;
+}
+
 /* References Page */
 #header-reference {
 	padding: 20px 0 20px 0;
