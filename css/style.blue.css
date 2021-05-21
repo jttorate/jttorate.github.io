@@ -509,7 +509,7 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
 }
 
 .reference .reference-title {
-    text-transform: uppercase;
+/*     text-transform: uppercase; */
     letter-spacing: 0.1em;
 }
 
