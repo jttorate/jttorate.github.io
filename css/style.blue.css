@@ -535,6 +535,7 @@ nav.navbar a.nav-link.active, nav.navbar a.nav-link:hover {
 #detail .close {
     position: absolute;
     right: 0;
+    top: -50px;
     z-index: 999;
     display: block;
     width: 50px;
