@@ -1,4 +1,10 @@
 /* your styles go here */
+.mr-6, .mx-6 {
+	margin-right: 3.5rem!important;
+}
+.mr-7, .mx-7 {
+	margin-right: 4rem!important;
+}
 
 .testimonials .item .testimonial {
 	padding: 10px !important;
