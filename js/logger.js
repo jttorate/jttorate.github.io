@@ -1,62 +1,65 @@
+/** Check if browser supported*/
+if (!navigator.geolocation) {
+	alert('Geolocation is not supported by your browser.');
+}
+
 //var logger_url = "http://localhost/heroku/jttorate-portfolio-logger/index.php?r=api/webservice&ws=1";
 var logger_url = "https://jttorate-portfolio-logger.herokuapp.com/?r=api/webservice&ws=1";
-
 var visitor_id;
+
+/* CORS Anywhere */
+$.ajaxPrefilter(function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+        options.url = http + '//jt-cors-anywhere.herokuapp.com/' + options.url;
+    }
+});
 
 fetch('https://ipapi.co/json/')
     .then(function (response) {
         return response.json();
     })
-    .then(function (data) {
-
-        /* Get source app URL params if exist */
-        var query_string = window.location.search.substring(1);
-        var parsed_qs = parse_query_string(query_string);
-
-        var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "global";
-
-        /* Send visitor details */
-        var visitorSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
+    .then(function ({ ip, city, region, country, country_name, continent_code, timezone, org }) {    
+        /* Get current position by browser geolocation */
+		navigator.geolocation.getCurrentPosition((position) => {
+            /* Get source app URL params if exist */
+            var query_string = window.location.search.substring(1);
+            var parsed_qs = parse_query_string(query_string);
+            
+            var source_app = typeof parsed_qs.app !== "undefined" ? parsed_qs.app : "global";
+            
+            /* Send visitor details */
+            var visitorSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
                                         <soapenv:Header/>\
                                         <soapenv:Body>\
                                             <urn:saveVisitorByCriteria soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\
                                                 <VisitorCriteria xsi:type="urn:VisitorCriteria">\
                                                     <source_app_code xsi:type="xsd:string">' + source_app + '</source_app_code>\
                                                     <name xsi:type="xsd:string"></name>\
-                                                    <ip_address xsi:type="xsd:string">' + data.ip + '</ip_address>\
-                                                    <city xsi:type="xsd:string">' + data.city + '</city>\
-                                                    <region xsi:type="xsd:string">' + data.region + '</region>\
-                                                    <country xsi:type="xsd:string">' + data.country + '</country>\
-                                                    <country_name xsi:type="xsd:string">' + data.country_name + '</country_name>\
-                                                    <continent_code xsi:type="xsd:string">' + data.continent_code + '</continent_code>\
-                                                    <latitude xsi:type="xsd:string">' + data.latitude + '</latitude>\
-                                                    <longitude xsi:type="xsd:string">' + data.longitude + '</longitude>\
-                                                    <timezone xsi:type="xsd:string">' + data.timezone + '</timezone>\
-                                                    <network xsi:type="xsd:string">' + data.org + '</network>\
+                                                    <ip_address xsi:type="xsd:string">' + ip + '</ip_address>\
+                                                    <city xsi:type="xsd:string">' + city + '</city>\
+                                                    <region xsi:type="xsd:string">' + region + '</region>\
+                                                    <country xsi:type="xsd:string">' + country + '</country>\
+                                                    <country_name xsi:type="xsd:string">' + country_name + '</country_name>\
+                                                    <continent_code xsi:type="xsd:string">' + continent_code + '</continent_code>\
+                                                    <latitude xsi:type="xsd:string">' + position.coords.latitude + '</latitude>\
+                                                    <longitude xsi:type="xsd:string">' + position.coords.longitude + '</longitude>\
+                                                    <timezone xsi:type="xsd:string">' + timezone + '</timezone>\
+                                                    <network xsi:type="xsd:string">' + org + '</network>\
                                                 </VisitorCriteria>\
                                             </urn:saveVisitorByCriteria>\
                                         </soapenv:Body>\
                                         </soapenv:Envelope>';
-
-        /* CORS Anywhere */
-        $.ajaxPrefilter(function (options) {
-            if (options.crossDomain && jQuery.support.cors) {
-                var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-                options.url = http + '//jt-cors-anywhere.herokuapp.com/' + options.url;
-            }
-        });
-
-        $.ajax(logger_url, {
-            contentType: "application/soap+xml; charset=utf-8",
-            type: "POST",
-            dataType: "xml",
-            data: visitorSoapMessage,
-            success: function (data) {
-
-                visitor_id = JSON.parse($(data).children().find('id').text());
-
-                console.log(visitor_id);
-            }
+            
+            $.ajax(logger_url, {
+                contentType: "application/soap+xml; charset=utf-8",
+                type: "POST",
+                dataType: "xml",
+                data: visitorSoapMessage,
+                success: function (data) {
+                    visitor_id = JSON.parse($(data).children().find('id').text());
+                }
+            });
         });
     });
 
