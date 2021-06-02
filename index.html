@@ -1103,6 +1103,36 @@
 			</div>
 		</section>
 
+		<!-- Guest Modal -->
+		<div id="guest-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<form id="guest-form" method="post" action="">
+							<div class="controls">
+								<div class="row">
+									<div class="col-lg-12 text-center">
+										<img src="img/logos/logo.png" alt="This is me!" width="250" />
+										<h3>Hello Guest,</h3>
+										<h5>Thank you for visiting my portfolio!</h5>
+										<hr />
+									</div>
+									<div class="col-md-12">
+										<p class="error text-small text-center"></p>
+										Please input your nickname:
+										<input type="text" name="guestName" required="required" class="form-control" />
+									</div>
+									<div class="col-md-12 text-center">
+										<button class="btn btn-primary">Submit</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Scroll Top Button-->
 		<a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
 
@@ -1121,13 +1151,15 @@
 		<script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
 		<script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
-		<script src="js/scroll-top.js"></script>
+		<script src="js/scrollTop.js"></script>
 		<script src="js/parseQueryString.js"></script>
 		<script src="js/cookieSetting.js"></script>
-		<script src="js/logger.js"></script>
-		<script src="js/my-works-tab.js"></script>
-		<script src="js/cookie-policy.js"></script>
-		<script src="js/contact-form.js"></script>
+		<script src="js/navigatorGeolocation.js"></script>
+		<script src="js/guestLogger.js"></script>
+		<script src="js/guestModal.js"></script>
+		<script src="js/myWorksTabEvents.js"></script>
+		<script src="js/cookiePolicy.js"></script>
+		<script src="js/contactForm.js"></script>
 		<script src="js/custom.js"></script>
 
 		<script>

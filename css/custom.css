@@ -1,9 +1,15 @@
 /* your styles go here */
-.mr-6, .mx-6 {
-	margin-right: 3.5rem!important;
+.mr-6,
+.mx-6 {
+	margin-right: 3.5rem !important;
 }
-.mr-7, .mx-7 {
-	margin-right: 4rem!important;
+.mr-7,
+.mx-7 {
+	margin-right: 4rem !important;
+}
+
+.error {
+	color: #a71930;
 }
 
 .testimonials .item .testimonial {
@@ -73,7 +79,7 @@
 }
 
 #nav-references > div a.nav-item.nav-link.active:after {
-	content: "";
+	content: '';
 	position: relative;
 	bottom: -3px;
 	border: 15px solid transparent;
@@ -99,7 +105,7 @@
 }
 
 .skill-progress-bar {
-/* 	text-align: right;
+	/* 	text-align: right;
 	padding-right: 10px; */
 }
 
@@ -182,7 +188,7 @@
 .event3Bubble:before,
 .event4Bubble:after,
 .event4Bubble:before {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 0;
 	height: 0;
@@ -274,7 +280,7 @@
 
 .DayDigit {
 	font-size: 27px;
-	font-family: "Arial Black", Gadget, sans-serif;
+	font-family: 'Arial Black', Gadget, sans-serif;
 	margin-left: 10px;
 	color: #4c4a4a;
 }
@@ -296,7 +302,7 @@
 }
 
 .eventTitle {
-	font-family: "Arial Black", Gadget, sans-serif;
+	font-family: 'Arial Black', Gadget, sans-serif;
 	color: #a71930;
 	font-size: 11px;
 	text-transform: uppercase;
@@ -399,5 +405,3 @@
 .nav-tabs .nav-item .nav-link {
 	border-bottom: 0px;
 }
-
-
