@@ -6,17 +6,18 @@ const $guestFormError = $guestForm.querySelector('.error');
 const $guestModal = $('#guest-modal');
 
 $(document).ready(function () {
+	window.scrollTo(window.scrollX, window.scrollY - 1); /** Trigger scroll without scrolling */
+
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(domainName + '_guestId')) {
-				/* Trigger geolocation permission */
-				navigatorGeolocation((error, coords) => {});
-
 				$guestModal.modal({
 					backdrop: 'static',
 					keyboard: false,
 					show: true,
 				});
+				/* Trigger geolocation permission */
+				navigatorGeolocation((error, coords) => {});
 			}
 		} else {
 			$guestModal.modal('hide');
