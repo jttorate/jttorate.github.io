@@ -32,7 +32,7 @@ $guestForm.addEventListener('submit', (e) => {
 	/** Check if geolocation was allowed */
 	navigator.permissions.query({ name: 'geolocation' }).then((data) => {
 		if (data.state === 'denied') {
-			$guestFormError.innerHTML = 'Geolocation is not enabled. Please enable to use this site.';
+			$guestFormError.innerHTML = 'Your location is not enabled. Please enable to use this site.';
 		} else {
 			/** Disable Button */
 			$guestFormButton.setAttribute('disabled', 'disabled');
