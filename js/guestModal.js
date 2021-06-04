@@ -34,6 +34,7 @@ $guestForm.addEventListener('submit', (e) => {
 		if (data.state === 'denied') {
 			$guestFormError.innerHTML = 'Your location is not enabled. Please enable to use this site.';
 		} else {
+			$guestFormError.innerHTML = '';
 			/** Disable Button */
 			$guestFormButton.setAttribute('disabled', 'disabled');
 
