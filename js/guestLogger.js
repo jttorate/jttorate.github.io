@@ -26,7 +26,8 @@ guestLogger = (appCode, guestName, callback) => {
 					contentType: 'application/json',
 					dataType: 'json',
 					success: function (data) {
-						setCookie(domainName + '_guestId', data.guest._id, 1);
+						/** Set cookie 1 hour expiration  */
+						setCookie(domainName + '_guestId', data.guest._id, 0.04167);
 						callback(null, true);
 					},
 					error: function (data) {
