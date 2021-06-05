@@ -1,6 +1,7 @@
 /** Elements */
 const $guestForm = document.querySelector('#guest-form');
 const $guestFormInput = $guestForm.querySelector('input');
+const $guestFormTextarea = $guestForm.querySelector('textarea');
 const $guestFormButton = $guestForm.querySelector('button');
 const $guestFormError = $guestForm.querySelector('.error');
 const $guestModal = $('#guest-modal');
@@ -35,18 +36,20 @@ $guestForm.addEventListener('submit', (e) => {
 			$guestFormButton.setAttribute('disabled', 'disabled');
 
 			const guestName = e.target.elements.guestName.value;
+			const guestMsg = e.target.elements.guestMessage.value;
 
 			/* Get source app URL params if exist */
 			const queryString = window.location.search.substring(1);
 			const parsedQs = parseQueryString(queryString);
 			const appCode = typeof parsedQs.app !== 'undefined' ? parsedQs.app : 'GLOBAL';
 
-			guestLogger(appCode, guestName, (error, data) => {
+			guestLogger(appCode, guestName, guestMsg, (error, data) => {
 				$guestFormButton.removeAttribute('disabled');
 
 				if (!error) {
 					/** Enable Form */
 					$guestFormInput.value = '';
+					$guestFormTextarea.value = '';
 					$guestModal.modal('hide');
 				}
 			});
