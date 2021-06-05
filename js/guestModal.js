@@ -12,7 +12,6 @@ $(document).ready(function () {
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(domainName + '_guestId')) {
 				$guestModal.modal('show');
-				$guestModal.modal({backdrop: 'static', keyboard: false});
 				/* Trigger geolocation permission */
 				navigatorGeolocation((error, coords) => {});
 			}
