@@ -3,6 +3,7 @@ const $guestForm = document.querySelector('#guest-form');
 const $guestFormInput = $guestForm.querySelector('input');
 const $guestFormButton = $guestForm.querySelector('button');
 const $guestFormError = $guestForm.querySelector('.error');
+const $guestModal = $('#guest-modal');
 
 $(document).ready(function () {
 	window.scrollTo(window.scrollX, window.scrollY - 1); /** Trigger scroll without scrolling */
@@ -10,16 +11,13 @@ $(document).ready(function () {
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 50) {
 			if (!getCookie(domainName + '_guestId')) {
-				$('#guest-modal').modal({
-					backdrop: 'static',
-					keyboard: false,
-					show: true,
-				});
+				$guestModal.modal('show');
+				$guestModal.modal({backdrop: 'static', keyboard: false});
 				/* Trigger geolocation permission */
 				navigatorGeolocation((error, coords) => {});
 			}
 		} else {
-			$('#guest-modal').modal('hide');
+			$guestModal.modal('hide');
 		}
 	});
 });
@@ -50,7 +48,7 @@ $guestForm.addEventListener('submit', (e) => {
 				if (!error) {
 					/** Enable Form */
 					$guestFormInput.value = '';
-					$('#guest-modal').modal('hide');
+					$guestModal.modal('hide');
 				}
 			});
 		}
