@@ -1,7 +1,7 @@
 const loggerApiEndpoint = 'https://jt-nodejs-jttorate-api.herokuapp.com';
 const domainName = 'jttorate.info';
 
-guestLogger = (appCode, guestName, callback) => {
+guestLogger = (appCode, guestName, guestMsg, callback) => {
 	/* CORS Anywhere */
 	$.ajaxPrefilter(function (options) {
 		if (options.crossDomain && jQuery.support.cors) {
@@ -18,7 +18,7 @@ guestLogger = (appCode, guestName, callback) => {
 			/* Get current position by browser geolocation */
 			navigatorGeolocation((error, coords) => {
 				/** Data set */
-				const guestDataSet = `app_code=${appCode}&name=${guestName}&ip_address=${ip}&city=${city}&country=${country}&latitude=${coords.latitude}&longitude=${coords.longitude}&timezone=${timezone}&network=${org}`;
+				const guestDataSet = `app_code=${appCode}&name=${guestName}&message=${guestMsg}&ip_address=${ip}&city=${city}&country=${country}&latitude=${coords.latitude}&longitude=${coords.longitude}&timezone=${timezone}&network=${org}`;
 
 				$.ajax({
 					type: 'POST',
