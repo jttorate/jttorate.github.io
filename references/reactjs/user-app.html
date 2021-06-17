@@ -1,80 +1,115 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>React &#187; User App - JUNNEL T TORATE</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="all,follow" />
+		<!-- Bootstrap CSS-->
+		<link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css" />
+		<!-- Font Awesome CSS-->
+		<link rel="stylesheet" href="../../vendor/font-awesome/css/font-awesome.min.css" />
+		<!-- Google fonts - Roboto + Roboto Slab-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300" />
+		<!-- owl carousel-->
+		<link rel="stylesheet" href="../../vendor/owl.carousel/assets/owl.carousel.css" />
+		<link rel="stylesheet" href="../../vendor/owl.carousel/assets/owl.theme.default.css" />
+		<!-- animate.css-->
+		<link rel="stylesheet" href="../../vendor/animate.css/animate.css" />
+		<!-- theme stylesheet-->
+		<link rel="stylesheet" href="../../css/style.blue.css" id="theme-stylesheet" />
+		<!-- Custom stylesheet - for your changes-->
+		<link rel="stylesheet" href="../../css/custom.css" />
+		<!-- Leaflet CSS - For the map-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" />
+		<!-- Cookie Consent-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="../../img/logos/logo.png" />
+		<!-- Tweaks for older IEs-->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
+		><![endif]-->
+	</head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>React &#187; User App - JUNNEL T TORATE</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://jttorate.info/vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="https://jttorate.info/vendor/font-awesome/css/font-awesome.min.css">
-    <!-- Google fonts - Roboto + Roboto Slab-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
-    <!-- owl carousel-->
-    <link rel="stylesheet" href="https://jttorate.info/vendor/owl.carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="https://jttorate.info/vendor/owl.carousel/assets/owl.theme.default.css">
-    <!-- animate.css-->
-    <link rel="stylesheet" href="https://jttorate.info/vendor/animate.css/animate.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="https://jttorate.info/css/style.blue.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="https://jttorate.info/css/custom.css">
-    <!-- Leaflet CSS - For the map-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="https://jttorate.info/img/logos/logo.png">
-    <!-- Tweaks for older IEs-->
-    <!--[if lt IE 9]>
-                    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-                    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-</head>
+	<body>
+		<!-- Header-->
+		<div id="layout_header"></div>
 
-<body>
-    <!-- Header-->
-    <div id="layout_header"></div>
+		<section id="content-page">
+			<div class="container">
+				<h4 class="content-title"><a href="../">References</a> &#187; <a href="./">React</a> &#187; User App</h4>
+				<p style="height: 500px"></p>
+			</div>
+		</section>
 
-    <section id="content-page">
-        <div class="container">
-            <h4 class="content-title">
-                <a href="../">References</a> &#187;
-                <a href="./">React</a> &#187; User App
-            </h4>
-            <p style="height: 500px;"></p>
-        </div>
-    </section>
+		<!-- Guest Modal -->
+		<div id="guest-modal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<form id="guest-form" method="post" action="">
+							<div class="controls">
+								<div class="row">
+									<div class="col-lg-12 text-center">
+										<!-- <img src="img/logos/logo.png" href="https://jttorate.info" width="100" /> -->
+										<h2>Hello there, I'm Nelo!</h2>
+										<h5>Thank you for visiting my portfolio!</h5>
+										<hr />
+									</div>
+									<div class="col-md-12">
+										<p class="error text-small text-center"></p>
+										Your name:
+										<input type="text" name="guestName" required="required" class="form-control" autocomplete="off" />
+										Message:
+										<textarea name="guestMessage" rows="3" class="form-control" maxlength="100" style="resize: none"></textarea>
+									</div>
+									<div class="col-md-12 text-center">
+										<button class="btn btn-primary">Submit</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- Scroll Top Button-->
-    <a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
+		<!-- Scroll Top Button-->
+		<a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
 
-    <!-- Footer-->
-    <div id="layout_footer"></div>
+		<!-- Footer-->
+		<div id="layout_footer"></div>
 
-    <!-- JavaScript files-->
-    <script src="https://jttorate.info/vendor/jquery/jquery.min.js"></script>
-    <script src="https://jttorate.info/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://jttorate.info/vendor/jquery.cookie/jquery.cookie.js"></script>
-    <script src="https://jttorate.info/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="https://jttorate.info/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="https://jttorate.info/vendor/jquery.counterup/jquery.counterup.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-    <script src="https://jttorate.info/js/front.js"></script>
-    <script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.css" />
-    <script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
-    <script src="https://jttorate.info/js/scroll-top.js"></script>
-    <script src="https://jttorate.info/js/cookie-policy.js"></script>
-    <script src="https://jttorate.info/js/custom.js"></script>
+		<!-- JavaScript files-->
+		<script src="../../vendor/jquery/jquery.min.js"></script>
+		<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="../../vendor/jquery.cookie/jquery.cookie.js"></script>
+		<script src="../../vendor/owl.carousel/owl.carousel.min.js"></script>
+		<script src="../../vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+		<script src="../../vendor/jquery.counterup/jquery.counterup.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+		<script src="../../js/front.js"></script>
+		<script src="https://goessner.net/download/prj/jsonxml/xml2json.js"></script>
+		<script src="https://cdn.wpcc.io/lib/1.0.2/cookieconsent.min.js" defer></script>
+		<script src="../../js/scrollTop.js"></script>
+		<script src="../../js/parseQueryString.js"></script>
+		<script src="../../js/cookieSetting.js"></script>
+		<script src="../../js/navigatorGeolocation.js"></script>
+		<script src="../../js/guestLogger.js"></script>
+		<script src="../../js/guestModal.js"></script>
+		<script src="../../js/myWorksTabEvents.js"></script>
+		<script src="../../js/cookiePolicy.js"></script>
+		<script src="../../js/custom.js"></script>
 
-    <script>
-        $(function() {
-            $('#layout_header').load("../../layout/header.html");
-            $('#layout_footer').load("../../layout/footer.html");
-        });
-    </script>
-</body>
-
+		<script>
+			$(function () {
+				$('#layout_header').load('../../layout/header.html');
+				$('#layout_footer').load('../../layout/footer.html');
+			});
+		</script>
+	</body>
 </html>
