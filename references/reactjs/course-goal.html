@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>React &#187; Course Goal - JUNNEL T TORATE</title>
+		<title>React &#187; Course Goal | JUNNEL T TORATE</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="all,follow" />
@@ -37,7 +37,7 @@
 
 	<body>
 		<!-- Header-->
-		<div id="layout_header"></div>
+		<div id="layout-header"></div>
 
 		<section id="content-page">
 			<div class="container">
@@ -47,42 +47,13 @@
 		</section>
 
 		<!-- Guest Modal -->
-		<div id="guest-modal" class="modal fade" role="dialog" data-keyboard="false" data-backdrop="static">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<form id="guest-form" method="post" action="">
-							<div class="controls">
-								<div class="row">
-									<div class="col-lg-12 text-center">
-										<!-- <img src="img/logos/logo.png" href="https://jttorate.info" width="100" /> -->
-										<h2>Hello there, I'm Nelo!</h2>
-										<h5>Thank you for visiting my portfolio!</h5>
-										<hr />
-									</div>
-									<div class="col-md-12">
-										<p class="error text-small text-center"></p>
-										Your name:
-										<input type="text" name="guestName" required="required" class="form-control" autocomplete="off" />
-										Message:
-										<textarea name="guestMessage" rows="3" class="form-control" maxlength="100" style="resize: none"></textarea>
-									</div>
-									<div class="col-md-12 text-center">
-										<button class="btn btn-primary">Submit</button>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div id="layout-guest-modal"></div>
 
 		<!-- Scroll Top Button-->
 		<a id="back-to-top" href="#" class="btn btn-light btn back-to-top" role="button"><i class="fa fa-arrow-up"></i></a>
 
 		<!-- Footer-->
-		<div id="layout_footer"></div>
+		<div id="layout-footer"></div>
 
 		<!-- JavaScript files-->
 		<script src="../../vendor/jquery/jquery.min.js"></script>
@@ -100,15 +71,17 @@
 		<script src="../../js/cookieSetting.js"></script>
 		<script src="../../js/navigatorGeolocation.js"></script>
 		<script src="../../js/guestLogger.js"></script>
-		<script src="../../js/guestModal.js"></script>
 		<script src="../../js/myWorksTabEvents.js"></script>
 		<script src="../../js/cookiePolicy.js"></script>
 		<script src="../../js/custom.js"></script>
 
 		<script>
 			$(function () {
-				$('#layout_header').load('../../layout/header.html');
-				$('#layout_footer').load('../../layout/footer.html');
+				$('#layout-header').load('../../layout/header.html');
+				$('#layout-footer').load('../../layout/footer.html');
+				$('#layout-guest-modal').load('../../layout/guest-modal.html', () => {
+					$.getScript('../../js/guestModal.js');
+				});
 			});
 		</script>
 	</body>
