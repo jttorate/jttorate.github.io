@@ -1,48 +1,33 @@
-$("#contact-me-btn").click(function (e) {
+/** Elements */
+const $contactMeForm = document.querySelector('#contact-me-form');
+const $contactMeFormInput = document.querySelectorAll('input[type="text"]');
+const $contactMeFormTextarea = $contactMeForm.querySelector('textarea');
+const $contactMeFormButton = $guestForm.querySelector('button');
 
-    var validated = true;
+/** Contact Me Form Submit */
+$contactMeForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	/** Disable Button */
+	$contactMeFormButton.setAttribute('disabled', 'disabled');
 
-    $("#contact-me-form [required=required]").each(function () {
-        if ($(this).val() === "") {
-            validated = false;
-        }
-    });
+	contactUsForm(
+		{
+			firstName: e.target.elements.firstName.value,
+			lastName: e.target.elements.lastName.value,
+			email: e.target.elements.email.value,
+			contactNumber: e.target.elements.contactNumber.value,
+			message: e.target.elements.message.value,
+		},
+		(error, data) => {
+			$contactMeFormButton.removeAttribute('disabled');
 
-    if (validated) {
-
-        e.preventDefault();
-
-        /* Send contact_us details */
-        var contactUsSoapMessage = '<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ApiControllerwsdl">\
-                                    <soapenv:Header/>\
-                                    <soapenv:Body>\
-                                        <urn:saveContactUsByCriteria soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\
-                                            <ContactUsCriteria xsi:type="urn:ContactUsCriteria">\
-                                               <visitor_id xsi:type="xsd:integer">' + visitor_id + '</visitor_id>\
-                                               <first_name xsi:type="xsd:string">' + $("#contact-me-form [name=first_name]").val() + '</first_name>\
-                                               <last_name xsi:type="xsd:string">' + $("#contact-me-form [name=last_name]").val() + '</last_name>\
-                                               <email xsi:type="xsd:string">' + $("#contact-me-form [name=email]").val() + '</email>\
-                                               <contact_no xsi:type="xsd:string">' + $("#contact-me-form [name=contact_no]").val() + '</contact_no>\
-                                               <message xsi:type="xsd:string">' + $("#contact-me-form [name=message]").val() + '</message>\
-                                            </ContactUsCriteria>\
-                                         </urn:saveContactUsByCriteria>\
-                                    </soapenv:Body>\
-                                    </soapenv:Envelope>';
-
-        $.ajax(logger_url, {
-            contentType: "application/soap+xml; charset=utf-8",
-            type: "POST",
-            dataType: "xml",
-            data: contactUsSoapMessage,
-            beforeSend: function () {
-                $("#contact-me-form :input").prop("disabled", true);
-            },
-            success: function (data) {
-                $("#contact-me-form")[0].reset();
-            },
-            complete: function () {
-                $("#contact-me-form :input").prop("disabled", false);
-            }
-        });
-    }
+			if (!error) {
+				/** Enable Form */
+				for (var i = 0; i < $contactMeFormInput.length; i++) {
+					$contactMeFormInput[i].value = '';
+				}
+				$contactMeFormTextarea.value = '';
+			}
+		}
+	);
 });
